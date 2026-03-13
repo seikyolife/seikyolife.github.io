@@ -1,4 +1,18 @@
-body{
+@media (max-width:600px){
+
+[data-toc]{
+font-size:14px;
+}
+
+h1{
+font-size:22px;
+}
+
+h2{
+font-size:18px;
+}
+
+}body{
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 background:#f6f7f9;
 color:#333;
