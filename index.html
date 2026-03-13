@@ -4,69 +4,436 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>生協のあるくらし</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  :root {
+    --green-dark:   #085041;
+    --green-mid:    #0F6E56;
+    --green:        #1D9E75;
+    --green-light:  #5DCAA5;
+    --green-pale:   #E1F5EE;
+    --amber:        #EF9F27;
+    --amber-pale:   #FAEEDA;
+    --blue-pale:    #E6F1FB;
+    --blue:         #185FA5;
+    --text:         #1a1a18;
+    --text-muted:   #5a5a56;
+    --border:       rgba(8,80,65,0.12);
+    --bg:           #fafaf8;
+    --white:        #ffffff;
+    --serif:        'Noto Serif JP', serif;
+    --sans:         'Noto Sans JP', sans-serif;
+    --radius:       12px;
+    --radius-lg:    18px;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--green-dark);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .logo span { color: var(--green); }
+  nav { display: flex; gap: 1.75rem; }
+  nav a {
+    font-size: 13px; font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.15s;
+  }
+  nav a:hover { color: var(--green-dark); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 900px; margin: 2.5rem auto; padding: 0 1.5rem;
+  }
+  .hero-inner {
+    background: var(--green-dark);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(29,158,117,0.18);
+  }
+  .hero-inner::after {
+    content: '';
+    position: absolute; bottom: -40px; left: 30%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(93,202,165,0.12);
+  }
+  .hero-kicker {
+    display: inline-block;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--green-light);
+    background: rgba(93,202,165,0.15);
+    border: 1px solid rgba(93,202,165,0.3);
+    padding: 4px 12px; border-radius: 99px;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    position: relative; z-index: 1;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.8;
+    max-width: 480px;
+    position: relative; z-index: 1;
+  }
+
+  /* ── LAYOUT ── */
+  .main-layout {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--green-mid);
+    margin-bottom: 1.25rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── ARTICLE CARDS ── */
+  .articles { display: flex; flex-direction: column; gap: 1rem; }
+
+  .article-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .article-card:hover {
+    border-color: var(--green-light);
+    box-shadow: 0 4px 20px rgba(8,80,65,0.08);
+    transform: translateY(-2px);
+  }
+  .card-meta {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 0.75rem;
+  }
+  .tag {
+    font-size: 11px; font-weight: 500;
+    color: var(--green-mid);
+    background: var(--green-pale);
+    padding: 3px 10px; border-radius: 99px;
+  }
+  .date {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .card-title {
+    font-family: var(--serif);
+    font-size: 17px; font-weight: 700;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .card-badges {
+    display: flex; gap: 6px;
+  }
+  .badge {
+    font-size: 11px; font-weight: 500;
+    padding: 3px 10px; border-radius: 99px;
+  }
+  .badge-pal { background: var(--blue-pale); color: var(--blue); }
+  .badge-sei { background: var(--amber-pale); color: #854F0B; }
+
+  .card-arrow {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 12px; color: var(--green);
+    margin-top: 1rem; font-weight: 500;
+  }
+  .card-arrow svg { transition: transform 0.2s; }
+  .article-card:hover .card-arrow svg { transform: translateX(4px); }
+
+  /* ── SIDEBAR ── */
+  .sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+  }
+
+  .profile-head {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 0.75rem;
+  }
+  .avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .profile-name { font-weight: 500; font-size: 14px; margin-bottom: 1px; }
+  .profile-role { font-size: 12px; color: var(--text-muted); }
+  .profile-bio {
+    font-size: 13px; color: var(--text-muted); line-height: 1.75;
+  }
+
+  .cat-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .cat-list li a {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; color: var(--text-muted);
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .cat-list li a:hover { background: var(--green-pale); color: var(--green-dark); }
+  .cat-count {
+    font-size: 11px; font-weight: 500;
+    color: var(--green-mid);
+    background: var(--green-pale);
+    padding: 2px 8px; border-radius: 99px;
+  }
+
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag-cloud a {
+    font-size: 12px; color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 4px 12px; border-radius: 99px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .tag-cloud a:hover {
+    border-color: var(--green);
+    color: var(--green-dark);
+    background: var(--green-pale);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--white);
+  }
+  .footer-inner {
+    max-width: 900px; margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 15px; font-weight: 700;
+    color: var(--green-dark);
+  }
+  .footer-logo span { color: var(--green); }
+  .footer-copy { font-size: 12px; color: var(--text-muted); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-inner { animation: fadeUp 0.5s ease both; }
+  .article-card:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
+  .article-card:nth-child(2) { animation: fadeUp 0.5s 0.2s ease both; }
+  .sidebar-card:nth-child(1) { animation: fadeUp 0.5s 0.15s ease both; }
+  .sidebar-card:nth-child(2) { animation: fadeUp 0.5s 0.25s ease both; }
+  .sidebar-card:nth-child(3) { animation: fadeUp 0.5s 0.35s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 660px) {
+    .main-layout { grid-template-columns: 1fr; }
+    nav { gap: 1rem; }
+    .hero-inner { padding: 2rem 1.5rem; }
+    .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
 <body>
 
 <header>
-<h1>生協のあるくらし</h1>
-<p>パルシステムと生活クラブを正直レビュー</p>
-
-<nav>
-<p><a href="index.html">ホーム</a>
-<a href="articles.html">記事一覧</a>
-<a href="category.html">カテゴリ</a>
-<a href="profile.html">プロフィール</a></p>
-
-</nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">生協の<span>ある</span>くらし</a>
+    <nav>
+      <a href="#">ホーム</a>
+      <a href="#">記事一覧</a>
+      <a href="#">カテゴリ</a>
+      <a href="#">プロフィール</a>
+    </nav>
+  </div>
 </header>
 
-<main>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">生協レビューブログ</div>
+    <h1>パルシステムと生活クラブを<br>正直に比べてみました</h1>
+    <p class="hero-sub">双子の娘を育てる30代パパが、毎日の食材を試しながらリアルな声をお届けします。</p>
+  </div>
+</section>
 
-<section>
-<h2>最新記事</h2>
+<div class="main-layout">
 
-<div class="card">
-<h3><a href="1egg.html">卵を比較！パルシステムVS生活クラブ</a></h3>
-<p>味・価格・安全性をレビュー</p>
+  <!-- 記事一覧 -->
+  <main>
+    <div class="section-label">最新記事</div>
+    <div class="articles">
+
+      <a href="1egg.html" class="article-card">
+        <div class="card-meta">
+          <span class="tag">食べ物レビュー</span>
+          <span class="date">2026年3月</span>
+        </div>
+        <div class="card-title">卵を比較！パルシステム VS 生活クラブ</div>
+        <div class="card-desc">味・価格・安全性をそれぞれ実際に使って正直にレビュー。どちらの卵が毎日の食卓に向いている？</div>
+        <div class="card-badges">
+          <span class="badge badge-pal">パルシステム</span>
+          <span class="badge badge-sei">生活クラブ</span>
+        </div>
+        <div class="card-arrow">
+          続きを読む
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a href="2milk.html" class="article-card">
+        <div class="card-meta">
+          <span class="tag">食べ物レビュー</span>
+          <span class="date">2026年3月</span>
+        </div>
+        <div class="card-title">牛乳を比較！パルシステム VS 生活クラブ</div>
+        <div class="card-desc">味・価格・使いやすさをじっくり比較。子どもが毎日飲む牛乳だから、こだわりたいポイントをまとめました。</div>
+        <div class="card-badges">
+          <span class="badge badge-pal">パルシステム</span>
+          <span class="badge badge-sei">生活クラブ</span>
+        </div>
+        <div class="card-arrow">
+          続きを読む
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- サイドバー -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">プロフィール</div>
+      <div class="profile-head">
+        <div class="avatar">🌿</div>
+        <div>
+          <div class="profile-name">管理人</div>
+          <div class="profile-role">30代・双子パパ・会社員</div>
+        </div>
+      </div>
+      <p class="profile-bio">パルシステムと生活クラブの2つの生協を利用し、忙しい毎日をなんとかやりくりしています。両社の食材を正直にレポートしています。</p>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">カテゴリ</div>
+      <ul class="cat-list">
+        <li>
+          <a href="#">
+            食べ物レビュー
+            <span class="cat-count">2</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            管理者のひとりごと
+            <span class="cat-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">タグ</div>
+      <div class="tag-cloud">
+        <a href="#">卵</a>
+        <a href="#">牛乳</a>
+        <a href="#">パルシステム</a>
+        <a href="#">生活クラブ</a>
+        <a href="#">比較</a>
+        <a href="#">食材レビュー</a>
+        <a href="#">子育て</a>
+      </div>
+    </div>
+
+  </aside>
+
 </div>
-
-<div class="card">
-<h3><a href="2milk.html">牛乳を比較！パルシステムVS生活クラブ</a></h3>
-<p>味・価格・使いやすさをレビュー</p>
-</div>
-
-</section>
-
-<section>
-<h2>カテゴリ</h2>
-
-<ul>
-<li><a href="category.html">食べ物レビュー</a></li>
-<li><a href="category.html">管理者のひとりごと</a></li>
-</ul>
-
-</section>
-
-<section>
-<h2>プロフィール</h2>
-
-<p>
-双子の娘を育てる３０代会社員。  
-パルシステムと生活クラブの２つの生協を利用し、忙しい毎日をやりくりしています。  
-それぞれの商品の違いやおすすめの食材を紹介します。
-</p>
-
-</section>
-
-</main>
 
 <footer>
-<p>© 2026 生協のあるくらし</p>
+  <div class="footer-inner">
+    <div class="footer-logo">生協の<span>ある</span>くらし</div>
+    <div class="footer-copy">© 2026 生協のあるくらし</div>
+  </div>
 </footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
