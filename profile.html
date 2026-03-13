@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プロフィール｜生協のあるくらし</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green-dark:#085041; --green-mid:#0F6E56; --green:#1D9E75;
+  --green-light:#5DCAA5; --green-pale:#E1F5EE;
+  --amber-pale:#FAEEDA; --blue-pale:#E6F1FB; --blue:#185FA5;
+  --text:#1a1a18; --text-muted:#5a5a56; --border:rgba(8,80,65,0.12);
+  --bg:#fafaf8; --white:#ffffff;
+  --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif;
+  --radius:12px; --radius-lg:18px; --max-w:900px;
+}
+html { font-size:16px; scroll-behavior:smooth; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.75; -webkit-font-smoothing:antialiased; }
+header { position:sticky; top:0; z-index:100; background:rgba(250,250,248,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.logo { font-family:var(--serif); font-size:17px; font-weight:700; color:var(--green-dark); text-decoration:none; }
+.logo span { color:var(--green); }
+nav { display:flex; gap:1.75rem; }
+nav a { font-size:13px; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.15s; }
+nav a:hover, nav a.active { color:var(--green-dark); }
+
+.page-wrap { max-width:660px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+
+.profile-hero { display:flex; align-items:center; gap:2rem; margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+.avatar-lg { width:88px; height:88px; border-radius:50%; background:var(--green-pale); display:flex; align-items:center; justify-content:center; font-size:40px; flex-shrink:0; }
+.profile-hero h1 { font-family:var(--serif); font-size:22px; font-weight:700; margin-bottom:4px; }
+.profile-hero .role { font-size:14px; color:var(--text-muted); margin-bottom:12px; }
+.profile-tags { display:flex; gap:6px; flex-wrap:wrap; }
+.profile-tag { font-size:12px; color:var(--green-mid); background:var(--green-pale); padding:3px 12px; border-radius:99px; }
+
+.prose { font-size:15px; line-height:1.95; }
+.prose h2 { font-family:var(--serif); font-size:19px; font-weight:700; color:var(--green-dark); margin:2rem 0 1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); }
+.prose p { margin-bottom:1.1rem; }
+.prose strong { font-weight:500; color:var(--green-dark); }
+
+.info-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:1.5rem 0; }
+.info-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1rem 1.25rem; }
+.info-label { font-size:11px; color:var(--text-muted); margin-bottom:4px; }
+.info-value { font-size:15px; font-weight:500; color:var(--green-dark); }
+
+.coop-compare { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:1.5rem 0; }
+.coop-card { border-radius:var(--radius-lg); padding:1.25rem; }
+.coop-card.pal { background:var(--blue-pale); }
+.coop-card.sei { background:var(--amber-pale); }
+.coop-name { font-size:13px; font-weight:500; margin-bottom:6px; }
+.coop-card.pal .coop-name { color:var(--blue); }
+.coop-card.sei .coop-name { color:#854F0B; }
+.coop-desc { font-size:13px; color:var(--text-muted); line-height:1.7; }
+
+footer { border-top:1px solid var(--border); background:var(--white); }
+.footer-inner { max-width:var(--max-w); margin:0 auto; padding:2rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+.footer-logo { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--green-dark); }
+.footer-logo span { color:var(--green); }
+.footer-copy { font-size:12px; color:var(--text-muted); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp 0.5s ease both; }
+@media(max-width:560px){ .profile-hero{flex-direction:column;text-align:center} .info-grid{grid-template-columns:1fr} .coop-compare{grid-template-columns:1fr} nav{gap:1rem} .footer-inner{flex-direction:column;gap:.5rem;text-align:center} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">生協の<span>ある</span>くらし</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">記事一覧</a>
+      <a href="category.html">カテゴリ</a>
+      <a href="profile.html" class="active">プロフィール</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap fade-up">
+
+  <div class="profile-hero">
+    <div class="avatar-lg">🌿</div>
+    <div>
+      <h1>管理人</h1>
+      <div class="role">30代 会社員 / 双子パパ</div>
+      <div class="profile-tags">
+        <span class="profile-tag">パルシステム利用中</span>
+        <span class="profile-tag">生活クラブ利用中</span>
+        <span class="profile-tag">3歳双子育児中</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h2>このブログについて</h2>
+    <p>パルシステムと生活クラブ、<strong>2つの生協を同時に使い続けている</strong>30代会社員です。3歳の双子の娘を育てながら、毎日の食材選びに奮闘しています。</p>
+    <p>「どっちがいいの？」と迷っている方のために、実際に使った感想を正直に書いていきます。広告案件なし、忖度なし。良いことも悪いことも書きます。</p>
+
+    <h2>わたしのプロフィール</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">年齢</div>
+        <div class="info-value">30代</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">家族構成</div>
+        <div class="info-value">夫・双子（3歳）</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">生協歴</div>
+        <div class="info-value">5年以上</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">利用中の生協</div>
+        <div class="info-value">2つ同時利用</div>
+      </div>
+    </div>
+
+    <h2>2つの生協を使う理由</h2>
+    <p>最初はどちらか1つでいいと思っていました。でも使い始めると、それぞれに得意なものがあって、気づいたら両方続けていました。</p>
+    <div class="coop-compare">
+      <div class="coop-card pal">
+        <div class="coop-name">パルシステム</div>
+        <div class="coop-desc">種類が豊富で価格帯が幅広い。日常使いの食材はここで揃えることが多い。</div>
+      </div>
+      <div class="coop-card sei">
+        <div class="coop-name">生活クラブ</div>
+        <div class="coop-desc">素材の味が濃い印象。採卵日表示など情報の透明性が高く安心感がある。</div>
+      </div>
+    </div>
+    <p>どちらが「勝ち」というわけではありません。家族の好みや、その月の家計状況によって使い分けています。</p>
+
+    <h2>このブログで目指すこと</h2>
+    <p>「生協に入りたいけど、どっちにすればいいかわからない」という方に、少しでも役立つ情報を届けたい。そのためにできるだけ具体的な数字と、正直な感想を書いていきます。</p>
+    <p>最後まで読んでいただきありがとうございます。これからもよろしくお願いします。</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">生協の<span>ある</span>くらし</div>
+    <div class="footer-copy">© 2026 生協のあるくらし</div>
+  </div>
+</footer>
+</body>
+</html>

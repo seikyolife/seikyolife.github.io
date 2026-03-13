@@ -3,211 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>生協のあるくらし</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>卵を比較！パルシステム VS 生活クラブ｜生協のあるくらし</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green-dark:#085041; --green-mid:#0F6E56; --green:#1D9E75;
+  --green-light:#5DCAA5; --green-pale:#E1F5EE;
+  --amber-pale:#FAEEDA; --blue-pale:#E6F1FB; --blue:#185FA5;
+  --text:#1a1a18; --text-muted:#5a5a56; --border:rgba(8,80,65,0.12);
+  --bg:#fafaf8; --white:#ffffff;
+  --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif;
+  --radius:12px; --radius-lg:18px; --max-w:900px;
+}
+html { font-size:16px; scroll-behavior:smooth; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.75; -webkit-font-smoothing:antialiased; }
 
+/* NAV */
+header { position:sticky; top:0; z-index:100; background:rgba(250,250,248,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.logo { font-family:var(--serif); font-size:17px; font-weight:700; color:var(--green-dark); text-decoration:none; }
+.logo span { color:var(--green); }
+nav { display:flex; gap:1.75rem; }
+nav a { font-size:13px; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.15s; }
+nav a:hover { color:var(--green-dark); }
+
+/* LAYOUT */
+.page-wrap { max-width:var(--max-w); margin:0 auto; padding:2.5rem 1.5rem 4rem; display:grid; grid-template-columns:1fr 260px; gap:2.5rem; align-items:start; }
+
+/* ARTICLE HEADER */
+.article-header { margin-bottom:2rem; }
+.article-meta { display:flex; align-items:center; gap:8px; margin-bottom:1rem; }
+.tag { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:3px 10px; border-radius:99px; }
+.date { font-size:12px; color:var(--text-muted); }
+.article-title { font-family:var(--serif); font-size:clamp(22px,4vw,30px); font-weight:700; line-height:1.4; margin-bottom:1rem; }
+.article-badges { display:flex; gap:6px; margin-bottom:1.5rem; }
+.badge { font-size:11px; font-weight:500; padding:3px 10px; border-radius:99px; }
+.badge-pal { background:var(--blue-pale); color:var(--blue); }
+.badge-sei { background:var(--amber-pale); color:#854F0B; }
+.article-lead { font-size:15px; color:var(--text-muted); line-height:1.85; padding:1.25rem 1.5rem; background:var(--green-pale); border-radius:var(--radius-lg); border-left:3px solid var(--green); }
+
+/* ARTICLE BODY */
+.article-body { font-size:15px; line-height:1.95; }
+.article-body h2 { font-family:var(--serif); font-size:20px; font-weight:700; color:var(--green-dark); margin:2.5rem 0 1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); }
+.article-body p { margin-bottom:1.1rem; }
+.article-body strong { font-weight:500; color:var(--green-dark); }
+.article-body img { width:100%; border-radius:var(--radius); margin:1rem 0; display:block; }
+
+/* COMPARISON TABLE */
+.comp-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:14px; }
+.comp-table th { background:var(--green-dark); color:#fff; font-weight:500; padding:10px 14px; text-align:left; }
+.comp-table th:first-child { border-radius:var(--radius) 0 0 0; }
+.comp-table th:last-child { border-radius:0 var(--radius) 0 0; }
+.comp-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
+.comp-table tr:nth-child(even) td { background:var(--green-pale); }
+.comp-table tr:last-child td:first-child { border-radius:0 0 0 var(--radius); }
+.comp-table tr:last-child td:last-child { border-radius:0 0 var(--radius) 0; }
+
+/* VERDICT */
+.verdict { background:var(--green-dark); color:#fff; border-radius:var(--radius-lg); padding:1.5rem; margin:2rem 0; }
+.verdict-label { font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-light); margin-bottom:0.75rem; }
+.verdict-title { font-family:var(--serif); font-size:18px; font-weight:700; margin-bottom:0.75rem; }
+.verdict p { font-size:14px; color:rgba(255,255,255,0.82); line-height:1.8; }
+
+/* SECTION LABEL */
+.section-label { display:flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-mid); margin-bottom:1.25rem; }
+.section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* SIDEBAR */
+.sidebar { display:flex; flex-direction:column; gap:1.25rem; }
+.sidebar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
+.profile-head { display:flex; align-items:center; gap:12px; margin-bottom:0.75rem; }
+.avatar { width:46px; height:46px; border-radius:50%; background:var(--green-pale); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.profile-name { font-weight:500; font-size:14px; margin-bottom:1px; }
+.profile-role { font-size:12px; color:var(--text-muted); }
+.profile-bio { font-size:13px; color:var(--text-muted); line-height:1.75; }
+.cat-list { list-style:none; display:flex; flex-direction:column; gap:2px; }
+.cat-list li a { display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--text-muted); text-decoration:none; padding:7px 10px; border-radius:8px; transition:background 0.15s, color 0.15s; }
+.cat-list li a:hover { background:var(--green-pale); color:var(--green-dark); }
+.cat-count { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:2px 8px; border-radius:99px; }
+.tag-cloud { display:flex; flex-wrap:wrap; gap:6px; }
+.tag-cloud a { font-size:12px; color:var(--text-muted); border:1px solid var(--border); padding:4px 12px; border-radius:99px; text-decoration:none; transition:all 0.15s; }
+.tag-cloud a:hover { border-color:var(--green); color:var(--green-dark); background:var(--green-pale); }
+
+/* RELATED */
+.related-card { display:block; text-decoration:none; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1rem 1.25rem; transition:border-color 0.2s, transform 0.2s; }
+.related-card:hover { border-color:var(--green-light); transform:translateY(-2px); }
+.related-card .r-tag { font-size:11px; color:var(--green-mid); margin-bottom:4px; }
+.related-card .r-title { font-size:14px; font-weight:500; color:var(--text); line-height:1.5; }
+
+/* FOOTER */
+footer { border-top:1px solid var(--border); background:var(--white); }
+.footer-inner { max-width:var(--max-w); margin:0 auto; padding:2rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+.footer-logo { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--green-dark); }
+.footer-logo span { color:var(--green); }
+.footer-copy { font-size:12px; color:var(--text-muted); }
+
+/* ANIM */
+@keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp 0.5s ease both; }
+
+@media(max-width:660px){
+  .page-wrap { grid-template-columns:1fr; }
+  nav { gap:1rem; }
+  .footer-inner { flex-direction:column; gap:0.5rem; text-align:center; }
+}
+</style>
+</head>
 <body>
 
 <header>
-<h1>生協のあるくらし</h1>
-<p>パルシステムと生活クラブを正直レビュー</p>
-
-<nav>
-<p><a href="index.html">ホーム</a>
-<a href="articles.html">記事一覧</a>
-<a href="category.html">カテゴリ</a>
-<a href="profile.html">プロフィール</a></p>
-
-</nav>
-</header><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>卵を比較！パルシステムVS生活クラブ</title>
-
-<style>
-
-body{
-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-line-height:1.8;
-color:#333;
-margin:0;
-background:#f6f7f9;
-}
-
-article{
-max-width:700px;
-margin:auto;
-padding:20px;
-background:white;
-}
-
-h1{
-font-size:26px;
-margin-bottom:20px;
-}
-
-h2{
-margin-top:40px;
-border-left:4px solid #2a7ae2;
-padding-left:10px;
-}
-
-p{
-margin-bottom:16px;
-}
-
-img{
-width:100%;
-height:auto;
-border-radius:8px;
-margin:20px 0;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<article>
-
-<h1>卵を比較！パルシステムVS生活クラブ</h1>
-
-<p>わたしは3歳の娘がいる30代。</p>
-
-<p>パルシステムと生活クラブの2つの生協を駆使して、忙しい毎日をなんとかやりくりしています。</p>
-
-<p>パルシステムと生活クラブ、どちらを使おうか迷っている方向けに、今回はパルシステムと生活クラブの  
-<b>「鶏卵」</b>を紹介します。</p>
-
-<p>比べるのは、パルシステムが「産直たまご（白玉）」。</p>
-
-<p>生活クラブが「鶏卵」。どちらも10個入りです。</p>
-
-
-<h2>まずは率直な味の話</h2>
-
-<p>結論から言うと、  
-<b>味はどちらもクセが弱め。</b></p>
-
-<p>ぶっちゃけ“劇的な差”はありません。</p>
-
-<p>でも、あえて言葉にするなら  
-<b>生活クラブの卵の方がクセがない。</b></p>
-
-<p>卵かけごはんにしたとき、口に入れた瞬間の雑味が少ない…気がします。</p>
-
-<p>もちろんパルシステムの卵も十分おいしい。</p>
-
-<p>普段の料理に使うなら、  
-ほとんどの人は違いを感じないと思います。</p>
-
-
-<h2>見た目はこんな感じ</h2>
-
-<img src="https://stat.ameba.jp/user_images/20260306/22/minaraitrader-btc/34/af/j/o1080081015757929157.jpg">
-
-<p>どちらも紙パック。</p>
-
-<p>生活クラブは<b>「採卵日」</b>が書かれているのが  
-大きな特徴です。</p>
-
-<p>採卵日の記載があるのは鮮度に自信があるからで、一般的な卵ではあまり書かれていません。</p>
-
-<p>もちろんパルシステムも産直なので、鮮度がいいはずです。</p>
-
-<img src="https://stat.ameba.jp/user_images/20260306/22/minaraitrader-btc/20/e6/j/o1080081015757929160.jpg">
-
-<p>パルシステム。（2個食べてしまったので8個）</p>
-
-<img src="https://stat.ameba.jp/user_images/20260306/22/minaraitrader-btc/6f/58/j/o1080081015757929164.jpg">
-
-<p>生活クラブ。</p>
-
-<p>ちなみに殻の色は鶏種で決まります。</p>
-
-<img src="https://stat.ameba.jp/user_images/20260307/12/minaraitrader-btc/9b/42/j/o1080081015758066293.jpg">
-
-<p>左のオレンジ色がパルシステム。  
-右の黄色が生活クラブ。</p>
-
-<p>黄身の色は餌によって変わります。</p>
-
-
-<h2>価格と種類の違い｜家計目線で見ると？</h2>
-
-<p>ここが一番大きな差。</p>
-
-<p>価格は  
-パルシステムが<b>税込354円</b></p>
-
-<p>生活クラブが<b>税込392円</b></p>
-
-<p>さらに<b>パルシステムは卵の種類が多いです。</b>（殻の色やえさの違いなどで卵の種類が違います。）</p>
-
-<p>（生活クラブは10個入と6個入の2種類のみ）</p>
-
-<p>価格帯や種類の選択肢があるので、家計や生活に合わせやすいのはパルシステムですね。</p>
-
-
-<h2>子供たちの反応</h2>
-
-<p>3歳の双子はどうか。</p>
-
-<p>どちらの卵もぺろりと食べることもあれば、  
-全く食べないこともあります。</p>
-
-<p>3歳の子どもにとって、  
-違いはないに等しい。</p>
-
-<p>大切なのは安心しておいしいかどうか。  
-それだけです。</p>
-
-
-<h2>飼育方法や飼料についても少しだけ</h2>
-
-<p>卵についてどうしても気になるのが  
-「親鳥の育て方」や「飼料の内容」。</p>
-
-<p>生活クラブもパルシステムも、  
-一般的な市販卵より基準を設けて  
-生産されているのが特徴です。</p>
-
-<p>飼料や管理方法にも  
-それぞれの考え方があり、  
-<b>安全性への配慮は感じられます。</b></p>
-
-<p>わが家では細かな違いを完全に把握して  
-選んでいるわけではありません。</p>
-
-<p>どちらも安心して食べられるし  
-おいしいので両方食べています。</p>
-
-
-<h2>まとめ｜結局どちらを選ぶ？</h2>
-
-<p>味の差はほとんどありません。</p>
-
-<p>決め手は</p>
-
-<p>・価格  
-・種類の多さ  
-・生産の背景</p>
-
-<p>個人的には味のクセの少なさで  
-生活クラブがやや好みです。</p>
-
-<p>（生活クラブのごま油＋塩の卵かけご飯は絶品）</p>
-
-<p>でもパルシステムの卵もおいしい。</p>
-
-<p>なにより価格が魅力です。</p>
-
-<p>最後まで読んでいただき  
-ありがとうございました。</p>
-
-</article>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">生協の<span>ある</span>くらし</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">記事一覧</a>
+      <a href="category.html">カテゴリ</a>
+      <a href="profile.html">プロフィール</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <main class="fade-up">
+
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="tag">食べ物レビュー</span>
+        <span class="date">2026年3月</span>
+      </div>
+      <h1 class="article-title">卵を比較！パルシステム VS 生活クラブ</h1>
+      <div class="article-badges">
+        <span class="badge badge-pal">パルシステム</span>
+        <span class="badge badge-sei">生活クラブ</span>
+      </div>
+      <p class="article-lead">パルシステムの「産直たまご（白玉）」と生活クラブの「鶏卵」、どちらも10個入りで比較しました。価格・味・安全性、それぞれの違いを正直にレビューします。</p>
+    </div>
+
+    <div class="article-body">
+
+      <h2>まずは率直な味の話</h2>
+      <p>結論から言うと、<strong>味はどちらもクセが弱め</strong>。ぶっちゃけ"劇的な差"はありません。</p>
+      <p>でも、あえて言葉にするなら<strong>生活クラブの卵の方がクセがない</strong>。卵かけごはんにしたとき、口に入れた瞬間の雑味が少ない…気がします。</p>
+      <p>もちろんパルシステムの卵も十分おいしい。普段の料理に使うなら、ほとんどの人は違いを感じないと思います。最終的には「好み」の領域です。</p>
+
+      <h2>見た目はこんな感じ</h2>
+      <p>どちらも紙パック。<strong>生活クラブは「採卵日」が書かれているのが大きな特徴</strong>です。鮮度の目安がわかりやすく、一般的な卵ではあまり書かれていません。</p>
+      <img src="https://stat.ameba.jp/user_images/20260306/22/minaraitrader-btc/34/af/j/o1080081015757929157.jpg" alt="パルシステムと生活クラブの卵パッケージ比較">
+      <img src="https://stat.ameba.jp/user_images/20260307/12/minaraitrader-btc/9b/42/j/o1080081015758066293.jpg" alt="黄身の色比較。左がパルシステム（オレンジ）、右が生活クラブ（黄色）">
+      <p>左のオレンジ色がパルシステム、右の黄色が生活クラブ。黄身の色は餌によって変わります。殻の色は鶏種で決まるものです。</p>
+
+      <h2>価格と種類の違い｜家計目線で見ると？</h2>
+      <table class="comp-table">
+        <thead>
+          <tr><th>項目</th><th>パルシステム</th><th>生活クラブ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>商品名</td><td>産直たまご（白玉）</td><td>鶏卵</td></tr>
+          <tr><td>価格（税込）</td><td><strong>354円</strong></td><td>392円</td></tr>
+          <tr><td>入数</td><td>10個</td><td>10個</td></tr>
+          <tr><td>種類の豊富さ</td><td>多い</td><td>10個・6個の2種のみ</td></tr>
+          <tr><td>採卵日の表示</td><td>なし</td><td>あり</td></tr>
+        </tbody>
+      </table>
+      <p>価格はパルシステムが約40円安い。さらに<strong>パルシステムは卵の種類が多く</strong>、家計や生活に合わせやすいのはパルシステムです。</p>
+
+      <h2>子供たちの反応</h2>
+      <p>3歳の双子はどうか。どちらの卵もぺろりと食べることもあれば、全く食べないこともあります。3歳の子どもにとって、違いはないに等しい。大切なのは安心しておいしいかどうか。それだけです。</p>
+
+      <h2>飼育方法や飼料についても少しだけ</h2>
+      <p>生活クラブもパルシステムも、一般的な市販卵より基準を設けて生産されているのが特徴です。飼料や管理方法にもそれぞれの考え方があり、<strong>安全性への配慮は感じられます</strong>。</p>
+      <p>わが家では細かな違いを完全に把握して選んでいるわけではありません。どちらも安心して食べられるし、おいしいので両方食べています。</p>
+
+      <div class="verdict">
+        <div class="verdict-label">まとめ｜結局どちらを選ぶ？</div>
+        <div class="verdict-title">味の差はほとんどなし。決め手は価格・種類・好み。</div>
+        <p>個人的には味のクセの少なさで生活クラブがやや好み（生活クラブのごま油＋塩の卵かけご飯は絶品）。でもパルシステムの卵もおいしく、何より価格が魅力です。</p>
+      </div>
+
+      <div class="section-label" style="margin-top:2.5rem;">関連記事</div>
+      <a href="2milk.html" class="related-card">
+        <div class="r-tag">食べ物レビュー</div>
+        <div class="r-title">牛乳を比較！パルシステム VS 生活クラブ</div>
+      </a>
+    </div>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">プロフィール</div>
+      <div class="profile-head">
+        <div class="avatar">🌿</div>
+        <div>
+          <div class="profile-name">管理人</div>
+          <div class="profile-role">30代・双子パパ・会社員</div>
+        </div>
+      </div>
+      <p class="profile-bio">パルシステムと生活クラブを両方使いながら、本当に使える食材を探してレポートしています。</p>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">カテゴリ</div>
+      <ul class="cat-list">
+        <li><a href="category.html">食べ物レビュー <span class="cat-count">2</span></a></li>
+        <li><a href="category.html">管理者のひとりごと <span class="cat-count">0</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">タグ</div>
+      <div class="tag-cloud">
+        <a href="#">卵</a><a href="#">牛乳</a><a href="#">パルシステム</a>
+        <a href="#">生活クラブ</a><a href="#">比較</a><a href="#">子育て</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">生協の<span>ある</span>くらし</div>
+    <div class="footer-copy">© 2026 生協のあるくらし</div>
+  </div>
+</footer>
 
 </body>
 </html>
