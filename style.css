@@ -137,4 +137,29 @@ header h1{
 font-size:22px;
 }
 
+}.site-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.site-title a{
+font-size:20px;
+font-weight:bold;
+color:#333;
+text-decoration:none;
+}
+
+.site-nav a{
+margin-left:15px;
+text-decoration:none;
+color:#555;
+font-size:14px;
+}
+
+.site-nav a:hover{
+color:#2a7ae2;
 }
