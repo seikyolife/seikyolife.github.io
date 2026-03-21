@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ウインナーを比較！パルシステム VS 生活クラブ｜生協のあるくらし</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green-dark:#085041; --green-mid:#0F6E56; --green:#1D9E75;
+  --green-light:#5DCAA5; --green-pale:#E1F5EE;
+  --amber-pale:#FAEEDA; --blue-pale:#E6F1FB; --blue:#185FA5;
+  --text:#1a1a18; --text-muted:#5a5a56; --border:rgba(8,80,65,0.12);
+  --bg:#fafaf8; --white:#ffffff;
+  --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif;
+  --radius:12px; --radius-lg:18px; --max-w:900px;
+}
+html { font-size:16px; scroll-behavior:smooth; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.75; -webkit-font-smoothing:antialiased; }
+header { position:sticky; top:0; z-index:100; background:rgba(250,250,248,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.logo { font-family:var(--serif); font-size:17px; font-weight:700; color:var(--green-dark); text-decoration:none; }
+.logo span { color:var(--green); }
+nav { display:flex; gap:1.75rem; }
+nav a { font-size:13px; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.15s; }
+nav a:hover { color:var(--green-dark); }
+.page-wrap { max-width:var(--max-w); margin:0 auto; padding:2.5rem 1.5rem 4rem; display:grid; grid-template-columns:1fr 260px; gap:2.5rem; align-items:start; }
+.article-header { margin-bottom:2rem; }
+.article-meta { display:flex; align-items:center; gap:8px; margin-bottom:1rem; }
+.tag { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:3px 10px; border-radius:99px; }
+.date { font-size:12px; color:var(--text-muted); }
+.article-title { font-family:var(--serif); font-size:clamp(22px,4vw,30px); font-weight:700; line-height:1.4; margin-bottom:1rem; }
+.article-badges { display:flex; gap:6px; margin-bottom:1.5rem; }
+.badge { font-size:11px; font-weight:500; padding:3px 10px; border-radius:99px; }
+.badge-pal { background:var(--blue-pale); color:var(--blue); }
+.badge-sei { background:var(--amber-pale); color:#854F0B; }
+.article-lead { font-size:15px; color:var(--text-muted); line-height:1.85; padding:1.25rem 1.5rem; background:var(--green-pale); border-radius:var(--radius-lg); border-left:3px solid var(--green); }
+.article-body { font-size:15px; line-height:1.95; }
+.article-body h2 { font-family:var(--serif); font-size:20px; font-weight:700; color:var(--green-dark); margin:2.5rem 0 1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); }
+.article-body p { margin-bottom:1.1rem; }
+.article-body strong { font-weight:500; color:var(--green-dark); }
+.article-body img { width:100%; border-radius:var(--radius); margin:1rem 0; display:block; }
+
+/* 原材料ボックス */
+.ingredients-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:1.5rem 0; }
+.ingredients-card { border-radius:var(--radius-lg); padding:1.25rem; }
+.ingredients-card.pal { background:var(--blue-pale); }
+.ingredients-card.sei { background:var(--amber-pale); }
+.ingredients-label { font-size:11px; font-weight:500; margin-bottom:0.75rem; }
+.ingredients-card.pal .ingredients-label { color:var(--blue); }
+.ingredients-card.sei .ingredients-label { color:#854F0B; }
+.ingredients-text { font-size:13px; color:var(--text-muted); line-height:1.8; }
+.ingredients-text .diff { font-weight:500; color:var(--green-dark); }
+
+.comp-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:14px; }
+.comp-table th { background:var(--green-dark); color:#fff; font-weight:500; padding:10px 14px; text-align:left; }
+.comp-table th:first-child { border-radius:var(--radius) 0 0 0; }
+.comp-table th:last-child { border-radius:0 var(--radius) 0 0; }
+.comp-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
+.comp-table tr:nth-child(even) td { background:var(--green-pale); }
+
+.verdict { background:var(--green-dark); color:#fff; border-radius:var(--radius-lg); padding:1.5rem; margin:2rem 0; }
+.verdict-label { font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-light); margin-bottom:0.75rem; }
+.verdict-title { font-family:var(--serif); font-size:18px; font-weight:700; margin-bottom:0.75rem; }
+.verdict p { font-size:14px; color:rgba(255,255,255,0.82); line-height:1.8; }
+
+.section-label { display:flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-mid); margin-bottom:1.25rem; }
+.section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.sidebar { display:flex; flex-direction:column; gap:1.25rem; }
+.sidebar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
+.profile-head { display:flex; align-items:center; gap:12px; margin-bottom:0.75rem; }
+.profile-name { font-weight:500; font-size:14px; margin-bottom:1px; }
+.profile-role { font-size:12px; color:var(--text-muted); }
+.profile-bio { font-size:13px; color:var(--text-muted); line-height:1.75; }
+.cat-list { list-style:none; display:flex; flex-direction:column; gap:2px; }
+.cat-list li a { display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--text-muted); text-decoration:none; padding:7px 10px; border-radius:8px; transition:background 0.15s, color 0.15s; }
+.cat-list li a:hover { background:var(--green-pale); color:var(--green-dark); }
+.cat-count { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:2px 8px; border-radius:99px; }
+.tag-cloud { display:flex; flex-wrap:wrap; gap:6px; }
+.tag-cloud a { font-size:12px; color:var(--text-muted); border:1px solid var(--border); padding:4px 12px; border-radius:99px; text-decoration:none; transition:all 0.15s; }
+.tag-cloud a:hover { border-color:var(--green); color:var(--green-dark); background:var(--green-pale); }
+.related-card { display:block; text-decoration:none; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1rem 1.25rem; transition:border-color 0.2s, transform 0.2s; margin-bottom:0.75rem; }
+.related-card:hover { border-color:var(--green-light); transform:translateY(-2px); }
+.related-card .r-tag { font-size:11px; color:var(--green-mid); margin-bottom:4px; }
+.related-card .r-title { font-size:14px; font-weight:500; color:var(--text); line-height:1.5; }
+footer { border-top:1px solid var(--border); background:var(--white); }
+.footer-inner { max-width:var(--max-w); margin:0 auto; padding:2rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+.footer-logo { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--green-dark); }
+.footer-logo span { color:var(--green); }
+.footer-copy { font-size:12px; color:var(--text-muted); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp 0.5s ease both; }
+@media(max-width:660px){ .page-wrap{grid-template-columns:1fr} nav{gap:1rem} .ingredients-grid{grid-template-columns:1fr} .footer-inner{flex-direction:column;gap:.5rem;text-align:center} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">生協の<span>ある</span>くらし</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">記事一覧</a>
+      <a href="category.html">カテゴリ</a>
+      <a href="profile.html">プロフィール</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <main class="fade-up">
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="tag">食べ物レビュー</span>
+        <span class="date">2026年3月</span>
+      </div>
+      <h1 class="article-title">ウインナーを比較！パルシステム VS 生活クラブ</h1>
+      <div class="article-badges">
+        <span class="badge badge-pal">パルシステム</span>
+        <span class="badge badge-sei">生活クラブ</span>
+      </div>
+      <p class="article-lead">どちらも無添加で安心安全なウインナーですが、原材料に大きな違いがありました。朝食やお弁当に欠かせない一品を、卵・牛乳に続いて正直に比べます。</p>
+    </div>
+
+    <div class="article-body">
+
+      <h2>共通点：無添加の国産ポークウインナー</h2>
+      <p>まず知ってほしいのが、どちらも<strong>国産の豚肉を主原料</strong>にしている点です。市販のウインナーには冷凍の輸入肉を使っているものもありますが、この2つは国産豚を使用しています。</p>
+      <p>また、どちらも<strong>添加物を使っていません</strong>。肉本来の色を活かした「無塩せき（発色剤不使用）」なので、見た目は自然な茶色ですが、噛むほどに肉本来の旨みが楽しめます。双子の娘たちも安心して食べさせられますし、2人ともすごい勢いで食べてくれます。</p>
+
+      <h2>異なる点：原材料と味わい</h2>
+      <p>同じ無添加でも、原材料はかなり違います。</p>
+
+      <img src="https://stat.ameba.jp/user_images/20260320/21/minaraitrader-btc/27/e3/p/o1080076315762572021.png" alt="パルシステムと生活クラブのウインナー原材料表示比較">
+
+      <div class="ingredients-grid">
+        <div class="ingredients-card pal">
+          <div class="ingredients-label">パルシステムの原材料</div>
+          <p class="ingredients-text">豚肉、豚脂肪、<span class="diff">デキストリン</span>、結着材料、糖類（<span class="diff">水あめ</span>、砂糖）、食塩、<span class="diff">酵母エキス</span>、香辛料、<span class="diff">オニオンパウダー</span><br><br>結着材料：<span class="diff">乳清たん白濃縮物、粉末状大豆たん白、粗ゼラチン</span></p>
+        </div>
+        <div class="ingredients-card sei">
+          <div class="ingredients-label">生活クラブの原材料</div>
+          <p class="ingredients-text">豚肉、結着材料、食塩、砂糖、香辛料、<span class="diff">ポークエキス</span>、<span class="diff">羊腸ケーシング</span><br><br>結着材料：<span class="diff">でん粉（えんどう豆、馬鈴薯）</span><br><br>※乳たんぱく・小麦でん粉不使用</p>
+        </div>
+      </div>
+
+      <p>パルシステムはさまざまな原材料を組み合わせることで、<strong>複雑な旨みを作り出している</strong>印象です。一方、生活クラブは原材料が少なく、<strong>よりシンプルな味わい</strong>に仕上げています。</p>
+      <p>実際に食べてみると、パルシステムは何もつけなくても旨みがたっぷり。生活クラブはややうす味で、そのままはもちろん、ケチャップにつけてもおいしいです。また生活クラブは組合員の要望を受けて乳たんぱく・小麦でん粉も不使用なので、<strong>アレルギーがある子どもにも安心</strong>です。</p>
+
+      <img src="https://stat.ameba.jp/user_images/20260321/07/minaraitrader-btc/a1/3d/j/o1080081015762667221.jpg" alt="調理後のウインナー比較。左がパルシステム、右が生活クラブ">
+      <p style="font-size:13px; color:var(--text-muted); margin-top:-0.5rem;">左がパルシステム、右が生活クラブ。どちらも自然な茶色が特徴。</p>
+
+      <h2>価格：コスパはパルシステムが上</h2>
+      <table class="comp-table">
+        <thead>
+          <tr><th>項目</th><th>パルシステム</th><th>生活クラブ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>価格（税込）</td><td>241円 / 100g</td><td>417円 / 165g</td></tr>
+          <tr><td>100gあたり換算</td><td>241円</td><td>約253円</td></tr>
+          <tr><td>原材料数</td><td>多い（複雑な旨み）</td><td>少ない（シンプル）</td></tr>
+          <tr><td>発色剤</td><td>不使用</td><td>不使用</td></tr>
+          <tr><td>アレルゲン配慮</td><td>—</td><td>乳・小麦不使用</td></tr>
+          <tr><td>ケーシング</td><td>記載なし</td><td>羊腸（天然）</td></tr>
+        </tbody>
+      </table>
+      <p>価格はパルシステムの方がやや安いです。市販品と比べると高めですが、国産豚・無添加という安心感を考えると、わが家では「むしろ安い」とさえ感じます。</p>
+
+      <div class="verdict">
+        <div class="verdict-label">まとめ｜結局どちらを選ぶ？</div>
+        <div class="verdict-title">コスパ重視ならパルシステム、シンプルさ重視なら生活クラブ。</div>
+        <p>どちらも無添加なので安全性は同じ。旨みたっぷりのパルシステムか、素材をそのまま活かした生活クラブか、好みで選んでよいと思います。アレルギーがある子どもがいる家庭には生活クラブが特におすすめです。</p>
+      </div>
+
+      <div class="section-label" style="margin-top:2.5rem;">関連記事</div>
+      <a href="1egg.html" class="related-card">
+        <div class="r-tag">食べ物レビュー</div>
+        <div class="r-title">卵を比較！パルシステム VS 生活クラブ</div>
+      </a>
+      <a href="2milk.html" class="related-card">
+        <div class="r-tag">食べ物レビュー</div>
+        <div class="r-title">牛乳を比較！パルシステム VS 生活クラブ</div>
+      </a>
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">プロフィール</div>
+      <div class="profile-head">
+        <img src="profile-photo.avif" alt="管理人" style="width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+        <div>
+          <div class="profile-name">管理人</div>
+          <div class="profile-role">30代・双子パパ・会社員</div>
+        </div>
+      </div>
+      <p class="profile-bio">パルシステムと生活クラブを両方使いながら、本当に使える食材を探してレポートしています。</p>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">カテゴリ</div>
+      <ul class="cat-list">
+        <li><a href="category.html">食べ物レビュー <span class="cat-count">3</span></a></li>
+        <li><a href="category.html">管理者のひとりごと <span class="cat-count">2</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">タグ</div>
+      <div class="tag-cloud">
+        <a href="#">卵</a><a href="#">牛乳</a><a href="#">ウインナー</a>
+        <a href="#">パルシステム</a><a href="#">生活クラブ</a>
+        <a href="#">無添加</a><a href="#">子育て</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">生協の<span>ある</span>くらし</div>
+    <div class="footer-copy">© 2026 生協のあるくらし</div>
+  </div>
+</footer>
+</body>
+</html>
