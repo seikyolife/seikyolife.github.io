@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生活クラブの始め方・入会方法【パルシステムとの違いも解説】｜生協のあるくらし</title>
+<meta name="description" content="生活クラブへの入会方法をステップごとに解説。出資金の仕組み・対応エリア・パルシステムとの違いまで、両方使っている双子パパが正直にまとめました。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green-dark:#085041; --green-mid:#0F6E56; --green:#1D9E75;
+  --green-light:#5DCAA5; --green-pale:#E1F5EE;
+  --amber-pale:#FAEEDA; --amber:#EF9F27;
+  --blue-pale:#E6F1FB; --blue:#185FA5;
+  --text:#1a1a18; --text-muted:#5a5a56; --border:rgba(8,80,65,0.12);
+  --bg:#fafaf8; --white:#ffffff;
+  --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif;
+  --radius:12px; --radius-lg:18px; --max-w:900px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
+header{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--green-dark);text-decoration:none}
+.logo span{color:var(--green)}
+nav{display:flex;gap:1.75rem}
+nav a{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.15s}
+nav a:hover{color:var(--green-dark)}
+.page-wrap{max-width:var(--max-w);margin:0 auto;padding:2.5rem 1.5rem 4rem;display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:start}
+.article-header{margin-bottom:2rem}
+.article-meta{display:flex;align-items:center;gap:8px;margin-bottom:1rem}
+.tag{font-size:11px;font-weight:500;color:var(--green-mid);background:var(--green-pale);padding:3px 10px;border-radius:99px}
+.date{font-size:12px;color:var(--text-muted)}
+.article-title{font-family:var(--serif);font-size:clamp(22px,4vw,30px);font-weight:700;line-height:1.4;margin-bottom:1rem}
+.article-badges{display:flex;gap:6px;margin-bottom:1.5rem}
+.badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:99px}
+.badge-sei{background:var(--amber-pale);color:#854F0B}
+.article-lead{font-size:15px;color:var(--text-muted);line-height:1.85;padding:1.25rem 1.5rem;background:var(--green-pale);border-radius:var(--radius-lg);border-left:3px solid var(--green)}
+.pr-notice{font-size:11px;color:var(--text-muted);background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:6px 12px;margin-bottom:1.5rem;display:inline-block}
+.article-body{font-size:15px;line-height:1.95}
+.article-body h2{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--green-dark);margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+.article-body p{margin-bottom:1.1rem}
+.article-body strong{font-weight:500;color:var(--green-dark)}
+.caution{background:var(--amber-pale);border:1px solid rgba(239,159,39,0.3);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin:1.5rem 0}
+.caution-label{font-size:11px;font-weight:500;color:#854F0B;letter-spacing:0.06em;margin-bottom:0.5rem}
+.caution p{font-size:14px;color:#633806;line-height:1.8}
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:1.25rem 0}
+.area-pill{background:var(--amber-pale);color:#854F0B;font-size:13px;font-weight:500;text-align:center;padding:8px 6px;border-radius:var(--radius)}
+.cost-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:14px}
+.cost-table th{background:var(--green-dark);color:#fff;font-weight:500;padding:10px 14px;text-align:left}
+.cost-table th:first-child{border-radius:var(--radius) 0 0 0}
+.cost-table th:last-child{border-radius:0 var(--radius) 0 0}
+.cost-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.cost-table tr:nth-child(even) td{background:var(--green-pale)}
+.steps{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0}
+.step{display:flex;gap:1.25rem;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.step-num{width:36px;height:36px;border-radius:50%;background:var(--green-dark);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;font-weight:700;flex-shrink:0}
+.step-body{flex:1}
+.step-title{font-weight:500;font-size:15px;margin-bottom:4px;color:var(--green-dark)}
+.step-desc{font-size:14px;color:var(--text-muted);line-height:1.75}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.5rem 0}
+.diff-card{border-radius:var(--radius-lg);padding:1.25rem}
+.diff-card.pal{background:var(--blue-pale)}
+.diff-card.sei{background:var(--amber-pale)}
+.diff-label{font-size:11px;font-weight:500;margin-bottom:0.75rem}
+.diff-card.pal .diff-label{color:var(--blue)}
+.diff-card.sei .diff-label{color:#854F0B}
+.diff-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.diff-list li{font-size:13px;color:var(--text-muted);display:flex;align-items:flex-start;gap:6px;line-height:1.6}
+.diff-list li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:8px}
+.diff-card.pal .diff-list li::before{background:var(--blue)}
+.diff-card.sei .diff-list li::before{background:var(--amber)}
+.cta-wrap{margin:2rem 0;text-align:center}
+.cta-btn{display:inline-block;background:var(--green-dark);color:#fff;font-size:15px;font-weight:500;padding:14px 32px;border-radius:99px;text-decoration:none;transition:opacity 0.2s}
+.cta-btn:hover{opacity:0.85}
+.cta-sub{font-size:12px;color:var(--text-muted);margin-top:8px}
+.faq{display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.faq-q{font-size:14px;font-weight:500;padding:1rem 1.25rem;color:var(--green-dark);display:flex;align-items:flex-start;gap:10px}
+.faq-q::before{content:'Q';font-family:var(--serif);font-weight:700;font-size:16px;color:var(--green);flex-shrink:0}
+.faq-a{font-size:14px;color:var(--text-muted);padding:0 1.25rem 1rem 1.25rem;line-height:1.8;display:flex;gap:10px}
+.faq-a::before{content:'A';font-family:var(--serif);font-weight:700;font-size:16px;color:var(--text-muted);flex-shrink:0}
+.verdict{background:var(--green-dark);color:#fff;border-radius:var(--radius-lg);padding:1.5rem;margin:2rem 0}
+.verdict-label{font-size:11px;font-weight:500;letter-spacing:0.08em;color:var(--green-light);margin-bottom:0.75rem}
+.verdict-title{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:0.75rem}
+.verdict p{font-size:14px;color:rgba(255,255,255,0.82);line-height:1.8}
+.section-label{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:0.08em;color:var(--green-mid);margin-bottom:1.25rem}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.sidebar{display:flex;flex-direction:column;gap:1.25rem}
+.sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.profile-head{display:flex;align-items:center;gap:12px;margin-bottom:0.75rem}
+.profile-name{font-weight:500;font-size:14px;margin-bottom:1px}
+.profile-role{font-size:12px;color:var(--text-muted)}
+.profile-bio{font-size:13px;color:var(--text-muted);line-height:1.75}
+.cat-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.cat-list li a{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--text-muted);text-decoration:none;padding:7px 10px;border-radius:8px;transition:background 0.15s,color 0.15s}
+.cat-list li a:hover{background:var(--green-pale);color:var(--green-dark)}
+.cat-count{font-size:11px;font-weight:500;color:var(--green-mid);background:var(--green-pale);padding:2px 8px;border-radius:99px}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:6px}
+.tag-cloud a{font-size:12px;color:var(--text-muted);border:1px solid var(--border);padding:4px 12px;border-radius:99px;text-decoration:none;transition:all 0.15s}
+.tag-cloud a:hover{border-color:var(--green);color:var(--green-dark);background:var(--green-pale)}
+.related-card{display:block;text-decoration:none;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.25rem;transition:border-color 0.2s,transform 0.2s;margin-bottom:0.75rem}
+.related-card:hover{border-color:var(--green-light);transform:translateY(-2px)}
+.related-card .r-tag{font-size:11px;color:var(--green-mid);margin-bottom:4px}
+.related-card .r-title{font-size:14px;font-weight:500;color:var(--text);line-height:1.5}
+footer{border-top:1px solid var(--border);background:var(--white)}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:2rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--green-dark)}
+.footer-logo span{color:var(--green)}
+.footer-copy{font-size:12px;color:var(--text-muted)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp 0.5s ease both}
+@media(max-width:660px){.page-wrap{grid-template-columns:1fr}.nav{gap:1rem}.area-grid{grid-template-columns:repeat(3,1fr)}.diff-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:.5rem;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">生協の<span>ある</span>くらし</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">記事一覧</a>
+      <a href="category.html">カテゴリ</a>
+      <a href="profile.html">プロフィール</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <main class="fade-up">
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="tag">管理者のひとりごと</span>
+        <span class="date">2026年3月</span>
+      </div>
+      <h1 class="article-title">生活クラブの始め方・入会方法【パルシステムとの違いも解説】</h1>
+      <div class="article-badges">
+        <span class="badge badge-sei">生活クラブ</span>
+      </div>
+      <p class="article-lead">生活クラブはパルシステムと仕組みが少し異なります。特に出資金の積立制度は知らないと驚くポイントです。実際に使っている双子パパが、入会の流れ・費用・注意点を正直にまとめました。</p>
+    </div>
+
+    <div class="article-body">
+      <span class="pr-notice">※本記事にはアフィリエイトリンクが含まれます</span>
+
+      <h2>まず知っておきたい「生活クラブらしさ」</h2>
+      <p>生活クラブはパルシステムと同じ生協ですが、少し性格が違います。食材を「消費材」と呼び、組合員が共同で生産者と直接つながって品物を作るという考え方が根底にあります。</p>
+      <p>そのため<strong>組合員としての参加意識が強め</strong>で、年1回の総代会への参加や地域の組合員活動への関わりを求められることがあります。もちろん参加は任意なので、無視しても問題ありません。わが家のように「ただ食材を買いたいだけ」という家庭も多いです。</p>
+
+      <h2>対応エリア</h2>
+      <p>生活クラブはパルシステムより対応エリアが広く、北海道から兵庫県まで21都道府県で展開しています。ただし都道府県内でも配達していない地域があるので、まず公式サイトでエリア確認が必要です。</p>
+      <div class="area-grid">
+        <div class="area-pill">東京</div><div class="area-pill">神奈川</div>
+        <div class="area-pill">千葉</div><div class="area-pill">埼玉</div>
+        <div class="area-pill">茨城</div><div class="area-pill">栃木</div>
+        <div class="area-pill">群馬</div><div class="area-pill">山梨</div>
+        <div class="area-pill">長野</div><div class="area-pill">静岡</div>
+        <div class="area-pill">愛知</div><div class="area-pill">大阪</div>
+        <div class="area-pill">京都</div><div class="area-pill">兵庫</div>
+        <div class="area-pill">奈良</div><div class="area-pill">滋賀</div>
+        <div class="area-pill">青森</div><div class="area-pill">岩手</div>
+        <div class="area-pill">山形</div><div class="area-pill">福島</div>
+        <div class="area-pill">北海道</div>
+      </div>
+
+      <h2>費用のまとめ｜ここがパルシステムと一番違う</h2>
+      <p>生活クラブの費用体系はパルシステムより複雑です。<strong>毎月の積立出資金</strong>があるのが最大の違いです。</p>
+      <div class="caution">
+        <div class="caution-label">知らないと驚くポイント</div>
+        <p>生活クラブは加入時の出資金1,000円に加えて、<strong>毎月1,000円の積立増資</strong>があります。退会時に全額返還されますが、毎月引き落とされるので事前に把握しておきましょう。</p>
+      </div>
+      <table class="cost-table">
+        <thead><tr><th>項目</th><th>金額</th><th>備考</th></tr></thead>
+        <tbody>
+          <tr><td>入会金</td><td>無料</td><td>不要</td></tr>
+          <tr><td>年会費</td><td>無料</td><td>不要</td></tr>
+          <tr><td>加入時出資金</td><td>1,000円</td><td>退会時に全額返還</td></tr>
+          <tr><td>積立増資（毎月）</td><td>1,000円</td><td>退会時に全額返還</td></tr>
+          <tr><td>個別配送手数料</td><td>地域・注文金額により異なる</td><td>プレママ・ママ特典で無料になる場合あり</td></tr>
+          <tr><td>情報誌「生活と自治」</td><td>毎月100円（任意）</td><td>返還なし</td></tr>
+          <tr><td>エッコロたすけあい掛け金</td><td>毎月100円（任意）</td><td>組合員互助制度。返還なし</td></tr>
+          <tr><td>まち活動費</td><td>年2回・地域により異なる</td><td>返還なし</td></tr>
+        </tbody>
+      </table>
+      <p>出資金（加入時＋積立）は退会すれば全額戻ってきます。ただし情報誌・エッコロ・まち活動費は戻りません。パルシステムと比べると<strong>月々の固定費がやや多め</strong>です。</p>
+
+      <h2>入会の流れ</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">資料請求する（任意）</div>
+            <div class="step-desc">公式サイトから資料請求すると、カタログ見本や利用方法の説明資料が届きます。エリアによってはお試しセットや試供品の特典があります。いきなり入会せず、まず資料だけ取り寄せるのもOKです。</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Web入会フォームに入力する</div>
+            <div class="step-desc">氏名・住所・連絡先などを入力します。加入時出資金（1,000円）をクレジットカードまたは口座振替で支払います。一部エリアではWeb加入に対応していないため、担当者が自宅に来て手続きする場合もあります。</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">組合員登録完了メールを受け取る</div>
+            <div class="step-desc">組合員コードが記載されたメールが届きます。インターネット注文サービス「eくらぶ」に登録すると、スマホやPCから注文できるようになります。</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">カタログが届いて注文スタート</div>
+            <div class="step-desc">最寄りの配送センターからカタログと注文用紙が届きます。紙の注文書またはeくらぶから注文します。代金は毎月26日に口座引き落としです。</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>パルシステムと比べてどう違う？</h2>
+      <p>両方使っている立場から正直に書きます。</p>
+      <div class="diff-grid">
+        <div class="diff-card pal">
+          <div class="diff-label">パルシステムの特徴</div>
+          <ul class="diff-list">
+            <li>月々の固定費が少なめ</li>
+            <li>種類が豊富・冷凍食品も充実</li>
+            <li>おためしセットで試しやすい</li>
+            <li>初めての生協にハードルが低い</li>
+          </ul>
+        </div>
+        <div class="diff-card sei">
+          <div class="diff-label">生活クラブの特徴</div>
+          <ul class="diff-list">
+            <li>積立出資金あり（退会時返還）</li>
+            <li>食材のこだわりがより強い</li>
+            <li>オリジナルの製品が多い</li>
+            <li>組合員活動が活発</li>
+          </ul>
+        </div>
+      </div>
+      <p>どちらから始めるか迷っている方には、お試しができて品物の種類が豊富なパルシステムをおすすめしています。食材へのこだわりが強い方は生活クラブがおすすめです。</p>
+
+      <div class="cta-wrap">
+        <a href="https://seikatsuclub.coop/service/first.html" class="cta-btn">生活クラブの資料請求・入会はこちら</a>
+        <p class="cta-sub">公式サイトへ移動します</p>
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q">積立増資は必ず払わないといけないですか？</div>
+          <div class="faq-a">定款で定められているため、基本的には毎月の積立をお願いされます。ただし退会時に全額返還されるので「預けているお金」という認識が正確です。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">注文しない週も費用がかかりますか？</div>
+          <div class="faq-a">注文ゼロでも配送手数料が発生する場合があります。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">いつでも退会できますか？</div>
+          <div class="faq-a">いつでも退会できます。退会後、出資金（加入時出資金＋積立増資の全額）が返還されます。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">パルシステムと同時に使えますか？</div>
+          <div class="faq-a">使えます。わが家は両方同時に利用しています。それぞれ配達日が異なるため週2回食材が届くスタイルになり、買い物の手間がさらに減りました。</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <div class="verdict-label">まとめ</div>
+        <div class="verdict-title">積立出資金に慣れれば、こだわり食材の宝庫。</div>
+        <p>毎月の積立1,000円は最初「高い」と感じましたが、退会時に全部戻ってくると思えば気にならなくなりました。ノンホモ牛乳・採卵日表示の卵・無添加ウインナーなど、生活クラブにしかないこだわり食材が揃っているのが続けている理由です。</p>
+      </div>
+
+      <div class="cta-wrap">
+        <a href="https://seikatsuclub.coop/service/first.html" class="cta-btn">生活クラブの資料請求・入会はこちら</a>
+        <p class="cta-sub">公式サイトへ移動します</p>
+      </div>
+
+      <div class="section-label" style="margin-top:2.5rem;">関連記事</div>
+      <a href="6join-palsystem.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムの始め方・入会方法【双子パパが実際に入った手順】</div>
+      </a>
+      <a href="4whichcoop.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムと生活クラブ、どちらから始めればいい？</div>
+      </a>
+      <a href="3both.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムと生活クラブを両方使う理由【双子パパの場合】</div>
+      </a>
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px;margin-bottom:1rem;">プロフィール</div>
+      <div class="profile-head">
+        <img src="profile-photo.avif" alt="管理人" style="width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+        <div>
+          <div class="profile-name">管理人</div>
+          <div class="profile-role">30代・双子パパ・会社員</div>
+        </div>
+      </div>
+      <p class="profile-bio">パルシステムと生活クラブを両方使いながら、本当に使える食材を探してレポートしています。</p>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px;margin-bottom:1rem;">カテゴリ</div>
+      <ul class="cat-list">
+        <li><a href="category.html">食べ物レビュー <span class="cat-count">3</span></a></li>
+        <li><a href="category.html">管理者のひとりごと <span class="cat-count">4</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px;margin-bottom:1rem;">タグ</div>
+      <div class="tag-cloud">
+        <a href="#">卵</a><a href="#">牛乳</a><a href="#">ウインナー</a>
+        <a href="#">パルシステム</a><a href="#">生活クラブ</a>
+        <a href="#">入会方法</a><a href="#">子育て</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">生協の<span>ある</span>くらし</div>
+    <div class="footer-copy">© 2026 生協のあるくらし</div>
+  </div>
+</footer>
+</body>
+</html>
