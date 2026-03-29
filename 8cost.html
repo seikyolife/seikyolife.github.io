@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パルシステムと生活クラブの月額費用【実際いくかかる？双子パパの家計公開】｜生協のあるくらし</title>
+<meta name="description" content="パルシステムと生活クラブを両方使う双子パパが、実際の月額費用を公開。手数料・積立・注文金額のリアルな数字と、スーパーとのコスパ比較もまとめました。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green-dark:#085041; --green-mid:#0F6E56; --green:#1D9E75;
+  --green-light:#5DCAA5; --green-pale:#E1F5EE;
+  --amber-pale:#FAEEDA; --blue-pale:#E6F1FB; --blue:#185FA5;
+  --text:#1a1a18; --text-muted:#5a5a56; --border:rgba(8,80,65,0.12);
+  --bg:#fafaf8; --white:#ffffff;
+  --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif;
+  --radius:12px; --radius-lg:18px; --max-w:900px;
+}
+html { font-size:16px; scroll-behavior:smooth; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.75; -webkit-font-smoothing:antialiased; }
+header { position:sticky; top:0; z-index:100; background:rgba(250,250,248,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.logo { font-family:var(--serif); font-size:17px; font-weight:700; color:var(--green-dark); text-decoration:none; }
+.logo span { color:var(--green); }
+nav { display:flex; gap:1.75rem; }
+nav a { font-size:13px; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.15s; }
+nav a:hover { color:var(--green-dark); }
+.page-wrap { max-width:var(--max-w); margin:0 auto; padding:2.5rem 1.5rem 4rem; display:grid; grid-template-columns:1fr 260px; gap:2.5rem; align-items:start; }
+.article-header { margin-bottom:2rem; }
+.article-meta { display:flex; align-items:center; gap:8px; margin-bottom:1rem; }
+.tag { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:3px 10px; border-radius:99px; }
+.date { font-size:12px; color:var(--text-muted); }
+.article-title { font-family:var(--serif); font-size:clamp(22px,4vw,30px); font-weight:700; line-height:1.4; margin-bottom:1rem; }
+.article-badges { display:flex; gap:6px; margin-bottom:1.5rem; }
+.badge { font-size:11px; font-weight:500; padding:3px 10px; border-radius:99px; }
+.badge-pal { background:var(--blue-pale); color:var(--blue); }
+.badge-sei { background:var(--amber-pale); color:#854F0B; }
+.article-lead { font-size:15px; color:var(--text-muted); line-height:1.85; padding:1.25rem 1.5rem; background:var(--green-pale); border-radius:var(--radius-lg); border-left:3px solid var(--green); }
+
+.article-body { font-size:15px; line-height:1.95; }
+.article-body h2 { font-family:var(--serif); font-size:20px; font-weight:700; color:var(--green-dark); margin:2.5rem 0 1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); }
+.article-body p { margin-bottom:1.1rem; }
+.article-body strong { font-weight:500; color:var(--green-dark); }
+
+/* 数字カード */
+.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:1.5rem 0; }
+.stat-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
+.stat-card.pal { border-top:3px solid var(--blue); }
+.stat-card.sei { border-top:3px solid var(--amber); }
+.stat-label { font-size:11px; font-weight:500; margin-bottom:6px; }
+.stat-card.pal .stat-label { color:var(--blue); }
+.stat-card.sei .stat-label { color:#854F0B; }
+.stat-value { font-family:var(--serif); font-size:22px; font-weight:700; color:var(--text); }
+.stat-sub { font-size:12px; color:var(--text-muted); margin-top:4px; }
+
+/* 合計ハイライト */
+.total-banner { background:var(--green-dark); color:#fff; border-radius:var(--radius-lg); padding:1.5rem 2rem; margin:1.5rem 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.total-label { font-size:13px; color:var(--green-light); margin-bottom:4px; }
+.total-value { font-family:var(--serif); font-size:28px; font-weight:700; }
+.total-sub { font-size:12px; color:rgba(255,255,255,0.7); margin-top:4px; }
+
+/* 内訳表 */
+.cost-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:14px; }
+.cost-table th { background:var(--green-dark); color:#fff; font-weight:500; padding:10px 14px; text-align:left; }
+.cost-table th:first-child { border-radius:var(--radius) 0 0 0; }
+.cost-table th:last-child { border-radius:0 var(--radius) 0 0; }
+.cost-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
+.cost-table tr:nth-child(even) td { background:var(--green-pale); }
+.cost-table .total-row td { font-weight:500; color:var(--green-dark); background:var(--green-pale); }
+.return-note { font-size:11px; color:var(--green-mid); font-weight:500; }
+
+/* 比較バー */
+.compare-section { margin:1.5rem 0; }
+.compare-row { margin-bottom:1rem; }
+.compare-label { display:flex; justify-content:space-between; font-size:13px; margin-bottom:4px; }
+.compare-bar-wrap { background:var(--border); border-radius:99px; height:10px; overflow:hidden; }
+.compare-bar { height:10px; border-radius:99px; }
+.bar-pal { background:var(--blue); }
+.bar-sei { background:#EF9F27; }
+.bar-super { background:#888780; }
+
+/* 注意書き */
+.caution { background:var(--amber-pale); border:1px solid rgba(239,159,39,0.3); border-radius:var(--radius-lg); padding:1.25rem 1.5rem; margin:1.5rem 0; }
+.caution-label { font-size:11px; font-weight:500; color:#854F0B; letter-spacing:0.06em; margin-bottom:0.5rem; }
+.caution p { font-size:14px; color:#633806; line-height:1.8; }
+
+/* まとめ */
+.verdict { background:var(--green-dark); color:#fff; border-radius:var(--radius-lg); padding:1.5rem; margin:2rem 0; }
+.verdict-label { font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-light); margin-bottom:0.75rem; }
+.verdict-title { font-family:var(--serif); font-size:18px; font-weight:700; margin-bottom:0.75rem; }
+.verdict p { font-size:14px; color:rgba(255,255,255,0.82); line-height:1.8; }
+
+.section-label { display:flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-mid); margin-bottom:1.25rem; }
+.section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.sidebar { display:flex; flex-direction:column; gap:1.25rem; }
+.sidebar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
+.profile-head { display:flex; align-items:center; gap:12px; margin-bottom:0.75rem; }
+.profile-name { font-weight:500; font-size:14px; margin-bottom:1px; }
+.profile-role { font-size:12px; color:var(--text-muted); }
+.profile-bio { font-size:13px; color:var(--text-muted); line-height:1.75; }
+.cat-list { list-style:none; display:flex; flex-direction:column; gap:2px; }
+.cat-list li a { display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--text-muted); text-decoration:none; padding:7px 10px; border-radius:8px; transition:background 0.15s, color 0.15s; }
+.cat-list li a:hover { background:var(--green-pale); color:var(--green-dark); }
+.cat-count { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:2px 8px; border-radius:99px; }
+.tag-cloud { display:flex; flex-wrap:wrap; gap:6px; }
+.tag-cloud a { font-size:12px; color:var(--text-muted); border:1px solid var(--border); padding:4px 12px; border-radius:99px; text-decoration:none; transition:all 0.15s; }
+.tag-cloud a:hover { border-color:var(--green); color:var(--green-dark); background:var(--green-pale); }
+.related-card { display:block; text-decoration:none; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1rem 1.25rem; transition:border-color 0.2s, transform 0.2s; margin-bottom:0.75rem; }
+.related-card:hover { border-color:var(--green-light); transform:translateY(-2px); }
+.related-card .r-tag { font-size:11px; color:var(--green-mid); margin-bottom:4px; }
+.related-card .r-title { font-size:14px; font-weight:500; color:var(--text); line-height:1.5; }
+footer { border-top:1px solid var(--border); background:var(--white); }
+.footer-inner { max-width:var(--max-w); margin:0 auto; padding:2rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+.footer-logo { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--green-dark); }
+.footer-logo span { color:var(--green); }
+.footer-copy { font-size:12px; color:var(--text-muted); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp 0.5s ease both; }
+:root { --amber: #EF9F27; }
+@media(max-width:660px){ .page-wrap{grid-template-columns:1fr} nav{gap:1rem} .stat-grid{grid-template-columns:1fr} .total-banner{flex-direction:column} .footer-inner{flex-direction:column;gap:.5rem;text-align:center} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">生協の<span>ある</span>くらし</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">記事一覧</a>
+      <a href="category.html">カテゴリ</a>
+      <a href="profile.html">プロフィール</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <main class="fade-up">
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="tag">管理者のひとりごと</span>
+        <span class="date">2026年4月</span>
+      </div>
+      <h1 class="article-title">パルシステムと生活クラブの月額費用【実際いくらかかる？双子パパの家計公開】</h1>
+      <div class="article-badges">
+        <span class="badge badge-pal">パルシステム</span>
+        <span class="badge badge-sei">生活クラブ</span>
+      </div>
+      <p class="article-lead">「実際のところ毎月いくらかかるの？」という疑問に正直に答えます。パルシステムと生活クラブを両方使っているわが家（4人家族・双子3歳）の過去3ヶ月の実績をもとに、手数料・積立も含めたリアルな数字を公開します。</p>
+    </div>
+
+    <div class="article-body">
+
+      <h2>わが家の実際の注文金額（過去3ヶ月）</h2>
+      <p>まず結論から。過去3ヶ月の注文金額の実績はこうなっています。</p>
+
+      <div class="stat-grid">
+        <div class="stat-card pal">
+          <div class="stat-label">パルシステム（月の注文金額）</div>
+          <div class="stat-value">18,000〜26,000円</div>
+          <div class="stat-sub">平均約22,000円／月</div>
+        </div>
+        <div class="stat-card sei">
+          <div class="stat-label">生活クラブ（月の注文金額）</div>
+          <div class="stat-value">42,000〜51,000円</div>
+          <div class="stat-sub">平均約46,000円／月</div>
+        </div>
+      </div>
+
+      <div class="total-banner">
+        <div>
+          <div class="total-label">月の食材費合計（生協2つ＋スーパー）</div>
+          <div class="total-value">約80,000〜83,000円</div>
+          <div class="total-sub">手数料・積立は別途</div>
+        </div>
+        <div>
+          <div class="total-label">内訳</div>
+          <div class="total-value" style="font-size:18px;">パル2.2万＋生活クラブ4.6万＋スーパー1〜1.5万</div>
+        </div>
+      </div>
+
+      <p>生活クラブの方が注文量が多いです。理由は後述しますが、米・調味料・嗜好品など単価が高めの商品を注文する機会が多いためです。</p>
+
+      <h2>注文金額以外にかかる費用</h2>
+      <p>生協は注文金額だけでなく、手数料や積立もかかります。見落としがちな部分なので正直に書きます。</p>
+
+      <table class="cost-table">
+        <thead>
+          <tr><th>費用の種類</th><th>パルシステム</th><th>生活クラブ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>配達手数料</td>
+            <td>注文金額・地域による<br><span style="font-size:12px;color:var(--text-muted);">キッズ特典で割引あり</span></td>
+            <td>注文金額・地域による<br><span style="font-size:12px;color:var(--text-muted);">キッズ特典で無料になる場合も</span></td>
+          </tr>
+          <tr>
+            <td>積立増資</td>
+            <td>なし</td>
+            <td>月1,000円<br><span class="return-note">退会時に全額返還</span></td>
+          </tr>
+          <tr>
+            <td>情報誌・諸費用</td>
+            <td>なし</td>
+            <td>月約200円<br><span style="font-size:12px;color:var(--text-muted);">任意・返還なし</span></td>
+          </tr>
+                </tbody>
+      </table>
+
+      <p>生活クラブの積立増資（月1,000円）は退会時に全額戻ってきます。貯金のような感覚で捉えれば実質負担は月300円程度です。一方パルシステムは積立がないぶんシンプルです。</p>
+
+      <h2>なぜ生活クラブの方が高くなるのか</h2>
+      <p>わが家で生活クラブの注文金額がパルシステムの約2倍になっている理由はシンプルです。<strong>単価の高いお気に入り商品が生活クラブに集中している</strong>からです。</p>
+      <p>生活クラブで主に買っているのは、調味料・お米・コーヒー・トマトジュースなど、こだわりの食材が多いです。どれも1点あたりの価格が高く、お米なんかは毎週のように注文するため金額がかさみます。</p>
+      <p>一方パルシステムでメインに頼んでいるのは、肉・野菜・うどんなど日常使いで単価が比較的安い食材です。量を頼んでも金額が抑えられやすいです。</p>
+      <p>つまり金額の差は「どちらが多い・少ない」ではなく、<strong>何を買うかの違い</strong>です。</p>
+
+      <div class="caution">
+        <div class="caution-label">ご注意</div>
+        <p>これはあくまでわが家（4人家族・双子3歳）の実績です。家族構成や注文する商品によって金額は大きく変わります。参考程度にご覧ください。</p>
+      </div>
+
+      <h2>スーパーと比べたコスパはどうか</h2>
+      <p>「生協って高いんじゃないの？」という疑問に答えます。</p>
+      <p>単純な価格だけを比べると、確かに生協の方が高い商品は多いです。スーパーの特売品やPB商品と比べれば、同じ食材で1.2〜1.5倍の価格になることもあります。</p>
+      <p>ただ、こう考えています。<strong>「スーパーに行く回数を減らせる」という価値がある</strong>。共働き・双子育児の状況では、買い物に行く時間と体力も無視できないコストです。わが家では今もスーパーで月10,000〜15,000円ほど買い物していますが、生協を使う前と比べると回数はかなり減りました。そして<strong>安全安心で、なによりおいしい</strong>。生協の食材は添加物や農薬が少ないので安心して食べられます。それに（これは主観ですが）お肉や野菜などは市販品と比べて味が良いと感じています。</p>
+
+      <div class="compare-section">
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:1rem;">わが家の月の食材費の内訳</p>
+        <div class="compare-row">
+          <div class="compare-label">
+            <span>パルシステム（平均）</span>
+            <span style="font-weight:500;">約22,000円</span>
+          </div>
+          <div class="compare-bar-wrap">
+            <div class="compare-bar bar-pal" style="width:24%"></div>
+          </div>
+        </div>
+        <div class="compare-row" style="margin-top:12px;">
+          <div class="compare-label">
+            <span>生活クラブ（平均）</span>
+            <span style="font-weight:500;">約46,000円</span>
+          </div>
+          <div class="compare-bar-wrap">
+            <div class="compare-bar bar-sei" style="width:50%"></div>
+          </div>
+        </div>
+        <div class="compare-row" style="margin-top:12px;">
+          <div class="compare-label">
+            <span>スーパー</span>
+            <span style="font-weight:500;">10,000〜15,000円</span>
+          </div>
+          <div class="compare-bar-wrap">
+            <div class="compare-bar bar-super" style="width:14%"></div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">月合計：約80,000〜83,000円</p>
+      </div>
+
+      <p>スーパーを完全にゼロにはしていませんが、生鮮品を補充する程度です。生協2つとスーパーを組み合わせることで、買い物の手間を最小限にしながら食材をカバーできています。</p>
+
+      <h2>一般的な4人家族の食費と比べると</h2>
+      <p>総務省の家計調査によると、4人家族（夫婦と子ども2人）の食費（外食を除く）の平均は月約55,000〜65,000円程度です。わが家の食材費合計は約80,000〜83,000円なので、平均より高めです。</p>
+      <p>ただし生協の食材は品質にこだわった商品が多く、価格に見合った価値があると感じています。<strong>「安さ」よりも「安全性と質」、そして「時間」を優先した結果</strong>と捉えています。</p>
+
+      <h2>積立増資の正直な感想</h2>
+      <p>生活クラブの月1,000円の積立増資について、正直に両面を書きます。</p>
+      <p>毎月確実に引き落とされるので、注文金額とは別にキャッシュアウトが発生します。家計管理をシンプルにしたい方には少し面倒に感じるかもしれません。ただ生協のしくみを考えると、私たち一人一人が生協の運営に参加していくという考え方が大事だとも思っています。そのためやや負担はあるけれど納得はできている、というのが出資金に対する正直な感想です。</p>
+
+           <div class="verdict">
+        <div class="verdict-label">まとめ</div>
+        <div class="verdict-title">月約80,000円。平均より高めだが、質へのこだわりの結果。</div>
+        <p>生協2つ＋スーパーで月約80,000〜83,000円。一般的な4人家族の食材費より高めですが、調味料・お米・飲み物など単価の高いお気に入り商品を生活クラブで買っているためです。食材の安全性と質を優先した結果として、納得しています。普段の食事で何にこだわるかで、毎月の出費は大きく変わると思います。/p>
+      </div>
+
+      <div class="section-label" style="margin-top:2.5rem;">関連記事</div>
+      <a href="3both.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムと生活クラブを両方使う理由【双子パパの場合】</div>
+      </a>
+      <a href="6join-palsystem.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムの始め方・入会方法</div>
+      </a>
+      <a href="7join-seikatsuclub.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">生活クラブの始め方・入会方法</div>
+      </a>
+
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">プロフィール</div>
+      <div class="profile-head">
+        <img src="profile-photo.avif" alt="管理人" style="width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+        <div>
+          <div class="profile-name">管理人</div>
+          <div class="profile-role">30代・双子パパ・会社員</div>
+        </div>
+      </div>
+      <p class="profile-bio">パルシステムと生活クラブを両方使いながら、本当に使える食材を探してレポートしています。</p>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">カテゴリ</div>
+      <ul class="cat-list">
+        <li><a href="category.html">食べ物レビュー <span class="cat-count">3</span></a></li>
+        <li><a href="category.html">管理者のひとりごと <span class="cat-count">5</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">タグ</div>
+      <div class="tag-cloud">
+        <a href="#">費用</a><a href="#">家計</a><a href="#">パルシステム</a>
+        <a href="#">生活クラブ</a><a href="#">コスパ</a><a href="#">子育て</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">生協の<span>ある</span>くらし</div>
+    <div class="footer-copy">© 2026 生協のあるくらし</div>
+  </div>
+</footer>
+</body>
+</html>
