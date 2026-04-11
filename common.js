@@ -10,14 +10,22 @@
 // 記事データ（新記事は先頭に追加してください）
 // -------------------------------------------------------
 const ARTICLES = [
-{
-  file: "8cost.html",
-  title: "パルシステムと生活クラブの月額費用【実際いくらかかる？双子パパの家計公開】",
-  desc: "生協2つ＋スーパーで月約80,000円。手数料・積立も含めたリアルな数字を公開します。",
-  category: "hitorigoto",
-  date: "2026年4月",
-  badges: ["pal", "sei"],
-},
+  {
+    file: "9pork.html",
+    title: "豚肉を比較！パルシステム VS 生活クラブ",
+    desc: "どちらも国産豚肉を安心して買える産直品。でも生産者との関係性や飼料米の配合率に違いがありました。",
+    category: "review",
+    date: "2026年4月",
+    badges: ["pal", "sei"],
+  },
+  {
+    file: "8cost.html",
+    title: "パルシステムと生活クラブの月額費用【実際いくらかかる？双子パパの家計公開】",
+    desc: "生協2つ＋スーパーで月約80,000円。手数料・積立も含めたリアルな数字を公開します。",
+    category: "hitorigoto",
+    date: "2026年4月",
+    badges: ["pal", "sei"],
+  },
   {
     file: "7join-seikatsuclub.html",
     title: "生活クラブの始め方・入会方法【パルシステムとの違いも解説】",
@@ -178,7 +186,7 @@ function renderSidebar(targetId) {
   const hitorigotoCount = countByCategory("hitorigoto");
 
   // タグ一覧（記事のバッジから自動収集）
-  const allTags = ["卵", "牛乳", "ウインナー", "パルシステム", "生活クラブ", "入会方法", "比較", "子育て"];
+  const allTags = ["卵", "牛乳", "豚肉", "ウインナー", "パルシステム", "生活クラブ", "入会方法", "比較", "子育て"];
   const tagLinks = allTags.map(t => `<a href="#">${t}</a>`).join("");
 
   el.innerHTML = `
