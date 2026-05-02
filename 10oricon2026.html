@@ -192,17 +192,7 @@ footer { border-top:1px solid var(--border); background:var(--white); }
 </head>
 <body>
 
-<header>
-  <div class="nav-inner">
-    <a href="index.html" class="logo">生協の<span>ある</span>くらし</a>
-    <nav>
-      <a href="index.html">ホーム</a>
-      <a href="articles.html">記事一覧</a>
-      <a href="category.html">カテゴリ</a>
-      <a href="profile.html">プロフィール</a>
-    </nav>
-  </div>
-</header>
+<header id="site-header"></header>
 
 <div class="page-wrap">
   <main class="fade-up">
@@ -612,40 +602,15 @@ footer { border-top:1px solid var(--border); background:var(--white); }
     </div>
   </main>
 
-  <aside class="sidebar">
-    <div class="sidebar-card">
-      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">プロフィール</div>
-      <div class="profile-head">
-        <img src="profile-photo.avif" alt="管理人" style="width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-        <div>
-          <div class="profile-name">管理人</div>
-          <div class="profile-role">30代・双子パパ・会社員</div>
-        </div>
-      </div>
-      <p class="profile-bio">パルシステムと生活クラブを両方使いながら、本当に使える食材を探してレポートしています。</p>
-    </div>
-    <div class="sidebar-card">
-      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">カテゴリ</div>
-      <ul class="cat-list">
-        <li><a href="category.html">食べ物レビュー <span class="cat-count">3</span></a></li>
-        <li><a href="category.html">管理者のひとりごと <span class="cat-count">6</span></a></li>
-      </ul>
-    </div>
-    <div class="sidebar-card">
-      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">タグ</div>
-      <div class="tag-cloud">
-        <a href="#">ランキング</a><a href="#">オリコン</a><a href="#">パルシステム</a>
-        <a href="#">生活クラブ</a><a href="#">比較</a><a href="#">子育て</a><a href="#">首都圏</a>
-      </div>
-    </div>
-  </aside>
+  <aside id="site-sidebar" class="sidebar"></aside>
 </div>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">生協の<span>ある</span>くらし</div>
-    <div class="footer-copy">© 2026 生協のあるくらし</div>
-  </div>
-</footer>
+<footer id="site-footer"></footer>
+<script src="common.js"></script>
+<script>
+  renderNav("10oricon2026.html");
+  renderSidebar("site-sidebar");
+  renderFooter();
+</script>
 </body>
 </html>
