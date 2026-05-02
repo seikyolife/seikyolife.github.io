@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年オリコン顧客満足度ランキング比較【生活クラブが首都圏1位、パルシステムの強みは？】｜生協のあるくらし</title>
+<meta name="description" content="2026年最新のオリコン顧客満足度ランキングを生活クラブとパルシステムで徹底比較。首都圏9項目の順位、世帯別結果、利用者の声を双子パパ目線で解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green-dark:#085041; --green-mid:#0F6E56; --green:#1D9E75;
+  --green-light:#5DCAA5; --green-pale:#E1F5EE;
+  --amber-pale:#FAEEDA; --blue-pale:#E6F1FB; --blue:#185FA5;
+  --text:#1a1a18; --text-muted:#5a5a56; --border:rgba(8,80,65,0.12);
+  --bg:#fafaf8; --white:#ffffff;
+  --serif:'Noto Serif JP',serif; --sans:'Noto Sans JP',sans-serif;
+  --radius:12px; --radius-lg:18px; --max-w:900px;
+  --amber:#EF9F27;
+}
+html { font-size:16px; scroll-behavior:smooth; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.75; -webkit-font-smoothing:antialiased; }
+header { position:sticky; top:0; z-index:100; background:rgba(250,250,248,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.logo { font-family:var(--serif); font-size:17px; font-weight:700; color:var(--green-dark); text-decoration:none; }
+.logo span { color:var(--green); }
+nav { display:flex; gap:1.75rem; }
+nav a { font-size:13px; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.15s; }
+nav a:hover { color:var(--green-dark); }
+.page-wrap { max-width:var(--max-w); margin:0 auto; padding:2.5rem 1.5rem 4rem; display:grid; grid-template-columns:1fr 260px; gap:2.5rem; align-items:start; }
+.article-header { margin-bottom:2rem; }
+.article-meta { display:flex; align-items:center; gap:8px; margin-bottom:1rem; }
+.tag { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:3px 10px; border-radius:99px; }
+.date { font-size:12px; color:var(--text-muted); }
+.article-title { font-family:var(--serif); font-size:clamp(22px,4vw,30px); font-weight:700; line-height:1.4; margin-bottom:1rem; }
+.article-badges { display:flex; gap:6px; margin-bottom:1.5rem; }
+.badge { font-size:11px; font-weight:500; padding:3px 10px; border-radius:99px; }
+.badge-pal { background:var(--blue-pale); color:var(--blue); }
+.badge-sei { background:var(--amber-pale); color:#854F0B; }
+.badge-oricon { background:var(--green-pale); color:var(--green-dark); }
+.article-lead { font-size:15px; color:var(--text-muted); line-height:1.85; padding:1.25rem 1.5rem; background:var(--green-pale); border-radius:var(--radius-lg); border-left:3px solid var(--green); }
+
+.article-body { font-size:15px; line-height:1.95; }
+.article-body h2 { font-family:var(--serif); font-size:20px; font-weight:700; color:var(--green-dark); margin:2.5rem 0 1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border); }
+.article-body h3 { font-family:var(--serif); font-size:16px; font-weight:700; color:var(--green-mid); margin:2rem 0 0.75rem; }
+.article-body p { margin-bottom:1.1rem; }
+.article-body strong { font-weight:500; color:var(--green-dark); }
+
+/* 結果サマリーカード */
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:1.5rem 0; }
+.result-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.4rem; position:relative; overflow:hidden; }
+.result-card.sei { border-top:3px solid var(--amber); }
+.result-card.pal { border-top:3px solid var(--blue); }
+.result-card-rank {
+  position:absolute; top:1rem; right:1rem;
+  font-size:11px; font-weight:500; padding:3px 10px;
+  border-radius:99px;
+}
+.rank-1st { background:var(--amber-pale); color:#854F0B; }
+.rank-4th { background:#f0f0ee; color:#888; }
+.result-brand { font-family:var(--serif); font-size:15px; font-weight:700; margin-bottom:0.25rem; }
+.result-brand.sei-color { color:#854F0B; }
+.result-brand.pal-color { color:var(--blue); }
+.result-region { font-size:12px; color:var(--text-muted); margin-bottom:0.85rem; }
+.result-score { font-family:var(--serif); font-size:30px; font-weight:700; color:var(--text); line-height:1; margin-bottom:0.25rem; }
+.result-score span { font-size:14px; font-weight:400; color:var(--text-muted); }
+.result-wins { margin-top:1rem; padding-top:1rem; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:5px; }
+.win-item { display:flex; align-items:center; gap:7px; font-size:12px; color:var(--text-muted); line-height:1.4; }
+.win-badge { font-size:10px; font-weight:500; padding:2px 7px; border-radius:99px; white-space:nowrap; flex-shrink:0; }
+.win-badge-sei { background:var(--amber-pale); color:#854F0B; }
+.win-badge-pal { background:var(--blue-pale); color:var(--blue); }
+
+/* 調査概要バナー */
+.survey-banner { background:var(--green-dark); color:#fff; border-radius:var(--radius-lg); padding:1.25rem 1.5rem; margin:1.5rem 0; display:flex; gap:2rem; flex-wrap:wrap; }
+.survey-item { display:flex; flex-direction:column; gap:3px; }
+.survey-key { font-size:10px; color:var(--green-light); letter-spacing:0.07em; font-weight:500; }
+.survey-val { font-family:var(--serif); font-size:14px; font-weight:700; }
+
+/* 評価9項目テーブル */
+.eval-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:14px; }
+.eval-table th { background:var(--green-dark); color:#fff; font-weight:500; padding:10px 14px; text-align:left; }
+.eval-table th:first-child { border-radius:var(--radius) 0 0 0; }
+.eval-table th:last-child { border-radius:0 var(--radius) 0 0; }
+.eval-table td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:middle; }
+.eval-table tr:nth-child(even) td { background:var(--green-pale); }
+.cell-win { display:flex; align-items:center; gap:8px; font-weight:500; }
+.cell-other { color:var(--text-muted); font-size:13px; }
+.crown { font-size:15px; line-height:1; }
+
+/* スコア表示 */
+.score-val { font-family:var(--serif); font-weight:700; font-size:13px; }
+.score-sei { color:#854F0B; }
+.score-pal { color:var(--blue); }
+.rank-badge { display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:500; }
+.rank-num { font-family:var(--serif); font-size:14px; font-weight:700; }
+
+/* 差分バー */
+.diff-bar-wrap { display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted); margin-top:2px; }
+.diff-bar { height:5px; border-radius:99px; flex-shrink:0; }
+.diff-bar-sei { background:var(--amber); }
+.diff-bar-pal { background:var(--blue); opacity:0.6; }
+
+/* 世帯別テーブル */
+.household-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:1.5rem 0; }
+.household-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; }
+.household-head { padding:10px 14px; font-size:12px; font-weight:500; color:#fff; }
+.household-head.sei-bg { background:var(--amber); }
+.household-head.pal-bg { background:var(--blue); }
+.household-body { padding:10px 14px; }
+.household-row { display:flex; align-items:center; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border); font-size:13px; }
+.household-row:last-child { border-bottom:none; }
+.household-label { color:var(--text-muted); }
+.household-val { font-size:11px; font-weight:500; padding:2px 8px; border-radius:99px; }
+.val-win-sei { background:var(--amber-pale); color:#854F0B; }
+.val-win-pal { background:var(--blue-pale); color:var(--blue); }
+.val-none { background:#f0f0ee; color:#aaa; }
+
+/* 利用者の声 */
+.voice-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:1.25rem 0; }
+.voice-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.1rem 0.85rem; font-size:13px; color:var(--text-muted); line-height:1.75; }
+.voice-card::before { content:'\201C'; font-family:Georgia,serif; font-size:28px; color:var(--green-light); line-height:0.6; display:block; margin-bottom:6px; }
+.voice-card.pal-voice::before { color:var(--blue); opacity:0.5; }
+.voice-meta { margin-top:8px; font-size:11px; color:#bbb; text-align:right; }
+
+/* まとめボックス */
+.verdict { background:var(--green-dark); color:#fff; border-radius:var(--radius-lg); padding:1.5rem; margin:2rem 0; }
+.verdict-label { font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-light); margin-bottom:0.75rem; }
+.verdict-title { font-family:var(--serif); font-size:18px; font-weight:700; margin-bottom:0.75rem; }
+.verdict p { font-size:14px; color:rgba(255,255,255,0.82); line-height:1.8; }
+.verdict-rows { display:flex; flex-direction:column; gap:0; margin-top:1rem; }
+.verdict-row { display:flex; gap:12px; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.12); align-items:flex-start; }
+.verdict-icon { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; margin-top:2px; }
+.v-icon-sei { background:var(--amber); }
+.v-icon-pal { background:var(--blue); }
+.v-icon-both { background:rgba(255,255,255,0.15); }
+.verdict-text { font-size:14px; color:rgba(255,255,255,0.85); line-height:1.8; }
+.verdict-text strong { color:#fff; display:block; font-size:14px; font-weight:500; margin-bottom:3px; }
+
+/* 注意書き */
+.caution { background:var(--amber-pale); border:1px solid rgba(239,159,39,0.3); border-radius:var(--radius-lg); padding:1.25rem 1.5rem; margin:1.5rem 0; }
+.caution-label { font-size:11px; font-weight:500; color:#854F0B; letter-spacing:0.06em; margin-bottom:0.5rem; }
+.caution p { font-size:14px; color:#633806; line-height:1.8; }
+
+/* ポイントボックス */
+.point-box { background:var(--green-pale); border-left:3px solid var(--green); border-radius:0 var(--radius) var(--radius) 0; padding:1.1rem 1.4rem; margin:1.5rem 0; font-size:14px; color:var(--text); line-height:1.85; }
+.point-box strong { color:var(--green-dark); font-weight:500; }
+
+/* セクションラベル */
+.section-label { display:flex; align-items:center; gap:10px; font-size:11px; font-weight:500; letter-spacing:0.08em; color:var(--green-mid); margin-bottom:1.25rem; }
+.section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* サイドバー */
+.sidebar { display:flex; flex-direction:column; gap:1.25rem; }
+.sidebar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; }
+.profile-head { display:flex; align-items:center; gap:12px; margin-bottom:0.75rem; }
+.profile-name { font-weight:500; font-size:14px; margin-bottom:1px; }
+.profile-role { font-size:12px; color:var(--text-muted); }
+.profile-bio { font-size:13px; color:var(--text-muted); line-height:1.75; }
+.cat-list { list-style:none; display:flex; flex-direction:column; gap:2px; }
+.cat-list li a { display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--text-muted); text-decoration:none; padding:7px 10px; border-radius:8px; transition:background 0.15s, color 0.15s; }
+.cat-list li a:hover { background:var(--green-pale); color:var(--green-dark); }
+.cat-count { font-size:11px; font-weight:500; color:var(--green-mid); background:var(--green-pale); padding:2px 8px; border-radius:99px; }
+.tag-cloud { display:flex; flex-wrap:wrap; gap:6px; }
+.tag-cloud a { font-size:12px; color:var(--text-muted); border:1px solid var(--border); padding:4px 12px; border-radius:99px; text-decoration:none; transition:all 0.15s; }
+.tag-cloud a:hover { border-color:var(--green); color:var(--green-dark); background:var(--green-pale); }
+.related-card { display:block; text-decoration:none; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1rem 1.25rem; transition:border-color 0.2s, transform 0.2s; margin-bottom:0.75rem; }
+.related-card:hover { border-color:var(--green-light); transform:translateY(-2px); }
+.related-card .r-tag { font-size:11px; color:var(--green-mid); margin-bottom:4px; }
+.related-card .r-title { font-size:14px; font-weight:500; color:var(--text); line-height:1.5; }
+
+/* フッター */
+footer { border-top:1px solid var(--border); background:var(--white); }
+.footer-inner { max-width:var(--max-w); margin:0 auto; padding:2rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+.footer-logo { font-family:var(--serif); font-size:15px; font-weight:700; color:var(--green-dark); }
+.footer-logo span { color:var(--green); }
+.footer-copy { font-size:12px; color:var(--text-muted); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp 0.5s ease both; }
+
+@media(max-width:660px){
+  .page-wrap { grid-template-columns:1fr; }
+  nav { gap:1rem; }
+  .result-grid { grid-template-columns:1fr; }
+  .voice-grid { grid-template-columns:1fr; }
+  .household-grid { grid-template-columns:1fr; }
+  .survey-banner { flex-direction:column; gap:1rem; }
+  .footer-inner { flex-direction:column; gap:.5rem; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">生協の<span>ある</span>くらし</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="articles.html">記事一覧</a>
+      <a href="category.html">カテゴリ</a>
+      <a href="profile.html">プロフィール</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <main class="fade-up">
+
+    <!-- 記事ヘッダー -->
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="tag">管理者のひとりごと</span>
+        <span class="date">2026年5月</span>
+      </div>
+      <h1 class="article-title">2026年オリコン顧客満足度ランキング【生活クラブが首都圏2年連続1位、パルシステムが光る場面は？】</h1>
+      <div class="article-badges">
+        <span class="badge badge-sei">生活クラブ</span>
+        <span class="badge badge-pal">パルシステム</span>
+        <span class="badge badge-oricon">オリコン調査</span>
+      </div>
+      <p class="article-lead">2026年2月にオリコンが発表した最新の顧客満足度ランキング。首都圏では生活クラブが2年連続9度目の総合1位を獲得しました。パルシステムは総合4位ながら、「提供情報」1位や「子育て世帯×離乳食」での高得点など、強みのある項目も出ています。両方を使っているわが家目線でデータを整理しました。</p>
+    </div>
+
+    <div class="article-body">
+
+      <!-- 調査概要 -->
+      <h2>調査の概要</h2>
+      <p>まず調査の前提を確認しておきます。オリコンの顧客満足度調査は、実際にサービスを利用した人だけを対象にしたアンケートです。「試しただけ」「知っているだけ」ではなく、過去3年以内に月1回以上・2ヶ月以上継続して使った人の声をもとに集計されています。</p>
+
+      <div class="survey-banner">
+        <div class="survey-item">
+          <span class="survey-key">調査主体</span>
+          <span class="survey-val">株式会社 oricon ME</span>
+        </div>
+        <div class="survey-item">
+          <span class="survey-key">発表日</span>
+          <span class="survey-val">2026年2月2日</span>
+        </div>
+        <div class="survey-item">
+          <span class="survey-key">対象エリア</span>
+          <span class="survey-val">首都圏（埼玉・千葉・東京・神奈川）</span>
+        </div>
+        <div class="survey-item">
+          <span class="survey-key">有効回答数</span>
+          <span class="survey-val">7,101人</span>
+        </div>
+        <div class="survey-item">
+          <span class="survey-key">調査企業数</span>
+          <span class="survey-val">11社</span>
+        </div>
+      </div>
+
+      <p>評価項目は「入会のしやすさ」「キャンペーンの充実さ」「商品の充実さ」「食材の品質」「利用のしやすさ」「配送サービス」「料金」「提供情報」「サポートサービス」の全9項目。さらに世帯構成別（1人暮らし・共働き・子育て・シニア）のランキングも出ています。</p>
+
+      <!-- 総合結果 -->
+      <h2>首都圏・総合結果</h2>
+      <p>まず2社の総合順位を並べます。</p>
+
+      <div class="result-grid">
+        <div class="result-card sei">
+          <span class="result-card-rank rank-1st">🏆 首都圏 総合1位</span>
+          <div class="result-brand sei-color">生活クラブ</div>
+          <div class="result-region">食材宅配 首都圏</div>
+          <div class="result-score">76.1<span>点</span></div>
+          <div class="result-wins">
+            <div class="win-item"><span class="win-badge win-badge-sei">1位</span>商品の充実さ</div>
+            <div class="win-item"><span class="win-badge win-badge-sei">1位</span>食材の品質</div>
+            <div class="win-item"><span class="win-badge win-badge-sei">1位</span>利用のしやすさ</div>
+            <div class="win-item"><span class="win-badge win-badge-sei">1位</span>料金</div>
+          </div>
+        </div>
+        <div class="result-card pal">
+          <span class="result-card-rank rank-4th">首都圏 総合4位</span>
+          <div class="result-brand pal-color">パルシステム</div>
+          <div class="result-region">食材宅配 首都圏</div>
+          <div class="result-score">75.3<span>点</span></div>
+          <div class="result-wins">
+            <div class="win-item"><span class="win-badge win-badge-pal">1位</span>提供情報</div>
+            <div class="win-item"><span class="win-badge win-badge-pal">1位</span>子育て世帯×離乳食<br><span style="font-size:11px;color:#888;margin-left:2px;"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <p>生活クラブが圧倒的に見えますが、パルシステムも「提供情報」と「子育て世帯×離乳食」という2つで1位を獲得しています。このあたりは後ほど詳しく見ます。</p>
+
+      <!-- 評価9項目比較 -->
+      <h2>評価9項目を1つずつ見ていく</h2>
+      <p>9つの評価項目について、オリコン公式サイトに掲載されている首都圏での順位と得点をまとめました。得点を並べてみると、順位の差だけではわからない僅差の項目もあります。</p>
+
+      <table class="eval-table">
+        <thead>
+          <tr>
+            <th style="width:32%;">評価項目</th>
+            <th style="width:34%; background:#7a4500;">生活クラブ</th>
+            <th style="width:34%; background:#0e4a86;">パルシステム</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:500;">A. 入会のしやすさ</td>
+            <td>
+              <span class="cell-other">7位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:77px;"></div>
+                <span class="score-val score-sei">77.3点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">6位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:78px;"></div>
+                <span class="score-val score-pal">77.6点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">B. キャンペーンの充実さ</td>
+            <td>
+              <span class="cell-other">6位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:70px;"></div>
+                <span class="score-val score-sei">69.8点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">3位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:72px;"></div>
+                <span class="score-val score-pal">71.5点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">C. 商品の充実さ</td>
+            <td>
+              <div class="cell-win" style="color:#854F0B;">🥇 1位<span style="font-size:11px;font-weight:400;margin-left:4px;color:var(--text-muted);">（2年連続）</span></div>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:76px;"></div>
+                <span class="score-val score-sei">76.2点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">2位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:76px;"></div>
+                <span class="score-val score-pal">75.6点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">D. 食材の品質</td>
+            <td>
+              <div class="cell-win" style="color:#854F0B;">🥇 1位</div>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:81px;"></div>
+                <span class="score-val score-sei">80.5点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">5位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:78px;"></div>
+                <span class="score-val score-pal">78.0点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">E. 利用のしやすさ</td>
+            <td>
+              <div class="cell-win" style="color:#854F0B;">🥇 1位</div>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:82px;"></div>
+                <span class="score-val score-sei">82.3点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">4位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:81px;"></div>
+                <span class="score-val score-pal">80.7点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">F. 配送サービス</td>
+            <td>
+              <span class="cell-other">2位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:79px;"></div>
+                <span class="score-val score-sei">78.6点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">5位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:77px;"></div>
+                <span class="score-val score-pal">77.3点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">G. 料金</td>
+            <td>
+              <div class="cell-win" style="color:#854F0B;">🥇 1位</div>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:77px;"></div>
+                <span class="score-val score-sei">76.5点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">4位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:74px;"></div>
+                <span class="score-val score-pal">74.1点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">H. 提供情報</td>
+            <td>
+              <span class="cell-other">2位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:71px;"></div>
+                <span class="score-val score-sei">71.0点</span>
+              </div>
+            </td>
+            <td>
+              <div class="cell-win" style="color:var(--blue);">🥇 1位</div>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:71px;"></div>
+                <span class="score-val score-pal">71.1点</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">I. サポートサービス</td>
+            <td>
+              <span class="cell-other">6位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-sei" style="width:70px;"></div>
+                <span class="score-val score-sei">70.1点</span>
+              </div>
+            </td>
+            <td>
+              <span class="cell-other">4位</span>
+              <div class="diff-bar-wrap">
+                <div class="diff-bar diff-bar-pal" style="width:70px;"></div>
+                <span class="score-val score-pal">70.3点</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:13px; color:var(--text-muted);">出典：オリコン顧客満足度® 2026年 食材宅配 首都圏ランキング（2026年2月2日発表）。得点は各社のオリコン公式ページに掲載の数値です。</p>
+
+      <!-- 生活クラブの料金1位について -->
+      <h3>「料金」1位の話</h3>
+      <p>「生活クラブって高くないの？」という印象を持っている方は多いと思います。わたし自身も最初はそう思っていました。ただ実際に使っている人たちからすると、満足できる料金であるということ。価格に対して得られる商品価値が大きいというのは、わたし自身利用していて感じていますし、実際に利用してみないとわからにところだと思います。</p>
+     
+      <!-- パルシステムの提供情報1位について -->
+      <h3>パルシステムが「提供情報」で1位の意味</h3>
+      <p>パルシステムが首都圏で唯一1位を取った「提供情報」は、商品の産地・生産者情報・アレルギー対応などの情報開示の充実度を評価する項目です。</p>
+      <p>ただし数字を見ると面白いことがわかります。パルシステム71.1点、生活クラブ71.0点——<strong>差はわずか0.1点</strong>です。2位の生活クラブも同水準で食材情報を開示しているということで、どちらもこの点では非常に高い水準を保っていると言えます。</p>
+      <p>実際わたし自身もパルシステムと生活クラブ両方を使っていて、「この野菜がどこの農家から来ているか」「どんなえさで育てられたお肉なのか」がはっきりしているのは感じます。</p>
+
+      <!-- 世帯別ランキング -->
+      <h2>世帯別ランキング：自分の家庭と照らし合わせてみる</h2>
+      <p>総合順位だけでなく、「どんな世帯が評価したか」も見ておくと参考になります。</p>
+
+      <div class="household-grid">
+        <div class="household-card">
+          <div class="household-head sei-bg">生活クラブ（首都圏）</div>
+          <div class="household-body">
+            <div class="household-row">
+              <span class="household-label">1人暮らし</span>
+              <span class="household-val val-win-sei">1位</span>
+            </div>
+            <div class="household-row">
+              <span class="household-label">共働き世帯</span>
+              <span class="household-val val-win-sei">1位</span>
+            </div>
+             <div class="household-row">
+              <span class="household-label">シニア世帯</span>
+              <span class="household-val val-win-sei">1位</span>
+            </div>
+          </div>
+        </div>
+        <div class="household-card">
+          <div class="household-head pal-bg">パルシステム（首都圏）</div>
+
+            <div class="household-row">
+              <span class="household-label">子育て世帯×離乳食</span>
+              <span class="household-val val-win-pal">1位</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>生活クラブは「1人暮らし・共働き・シニア」と幅広い層で1位をとっています。一方パルシステムは子育て世帯、なかでも離乳食という局面での評価が突出しています。</p>
+
+      <div class="point-box">
+        <strong>パルシステムの「子育て世帯×離乳食」81.6点について。</strong>これは2026年から新設された複合評価項目です。わが家でも双子が生後6〜12ヶ月ごろはパルシステムの離乳食カタログに相当お世話になりました。安心安全ですし、種類も豊富で便利でした。
+      </div>
+
+      <!-- 利用者の声 -->
+      <h2>実際の利用者の声（オリコン調査より）</h2>
+      <p>調査に回答した実際の利用者のコメントも一部紹介します。</p>
+
+      <h3 style="color:#854F0B;">生活クラブを使っている人の声</h3>
+      <div class="voice-grid">
+        <div class="voice-card">
+          有機野菜や無添加の調味料が豊富。安全なものを自分で調べる手間が省けてありがたい。
+          <div class="voice-meta">60代・女性</div>
+        </div>
+        <div class="voice-card">
+          生鮮食品の質がよく、野菜は1週間経っても新鮮でおいしい。
+          <div class="voice-meta">50代・女性</div>
+        </div>
+        <div class="voice-card">
+          比較的リーズナブルな価格で新鮮な食材が手に入る。
+          <div class="voice-meta">50代・男性</div>
+        </div>
+        <div class="voice-card">
+          国の基準より厳しい独自の安全基準と、共同購入で価格が安定しているのが魅力。
+          <div class="voice-meta">30代・女性</div>
+        </div>
+      </div>
+
+      <h3 style="color:var(--blue); margin-top:1.5rem;">パルシステムを使っている人の声</h3>
+      <div class="voice-grid">
+        <div class="voice-card pal-voice">
+          配達のたびに担当者が感じよく対応してくれる。年配の方には見守り的な安心感もある。
+          <div class="voice-meta">60代以上・女性</div>
+        </div>
+        <div class="voice-card pal-voice">
+          アレルギー対応の食材がある。子どもが小さいとき、手数料がサービスされた。
+          <div class="voice-meta">50代・女性</div>
+        </div>
+        <div class="voice-card pal-voice">
+          商品が豊富でカタログを選ぶ楽しみがある。金額にかかわらず届けてもらえるのが便利。
+          <div class="voice-meta">50代・女性</div>
+        </div>
+        <div class="voice-card pal-voice">
+          留守でも玄関前に置いてもらえるので、共働きでも安心して使える。
+          <div class="voice-meta">60代以上・女性</div>
+        </div>
+      </div>
+
+      <!-- 双子パパの感想 -->
+      <h2>わが家（双子パパ）の率直な感想</h2>
+      <p>数字だけでなく、実際に両方を使っている立場から素直に書きます。</p>
+      <p>気づいたのは、<strong>生活クラブとパルシステムの差が思ったより小さい項目が多い</strong>ということです。たとえば「利用のしやすさ」は生活クラブ82.3点・パルシステム80.7点で差は1.6点。「食材の品質」は80.5点と78.0点で2.5点差。総合得点も76.1点と75.3点で0.8点差しかありません。どちらも利用者からは高く評価されていることがわかります。</p>
+       <p>生活クラブの「料金1位（76.5点）」については、実際に使っていなかったら信じられなかったでしょう。食費の実績を見ると生活クラブの方がパルシステムより注文金額が大きいので（<a href="8cost.html" style="color:var(--green-dark);text-decoration:underline;text-underline-offset:3px;">費用の記事参照</a>）、「高いのでは？」と感じるかもしれません。ただこれは使う量・品目が違うためで、同じ食材を同じ量で比べると生活クラブが大幅に高いわけではないと思います。品質の高さが、コスパ評価に反映されているのでしょう。</p>
+      <p>パルシステムが「子育て世帯×離乳食」で突出した評価（81.6点）を得ているのは、腑に落ちます。手数料割引もありますし、わが家では今は双子が3歳を過ぎてメインの使い方が変わりましたが、離乳食期のパルシステムへの依存度はかなり高かったです。</p>
+
+      <div class="caution">
+        <div class="caution-label">この記事について</div>
+        <p>ランキングデータは2026年2月2日発表のオリコン顧客満足度調査（首都圏・7,101人）をもとにしています。数値は時期によって変わります。最新の情報はオリコン公式サイトでご確認ください。</p>
+      </div>
+
+      <!-- まとめ -->
+      <div class="verdict">
+        <div class="verdict-label">まとめ</div>
+        <div class="verdict-title">総合差は0.8点。数字より「どの項目が自分に刺さるか」で選ぶ</div>
+        <p>生活クラブ76.1点・パルシステム75.3点。総合順位の差より、9つの評価項目のどこに価値を感じるかが、選ぶときの本当の判断軸だと思います。</p>
+        <div class="verdict-rows">
+          <div class="verdict-row">
+            <div class="verdict-icon v-icon-sei">🌿</div>
+            <div class="verdict-text">
+              <strong>生活クラブが向いている人</strong>
+              食材の品質・安全性を重視したい方。共働き世帯、1人暮らし、シニア世帯とどの層にも幅広く評価されています。
+            </div>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-icon v-icon-pal">📦</div>
+            <div class="verdict-text">
+              <strong>パルシステムが向いている人</strong>
+              特に離乳食期の赤ちゃんがいる子育て世帯。品質や安全性、価格、品ぞろえの多さなどをバランスよく重視したい方。
+            </div>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-icon v-icon-both">💡</div>
+            <div class="verdict-text">
+              <strong>迷っているなら</strong>
+              どちらにもお試しセットがあります。数字の比較は参考程度にして、実際の食材を試してみるのが一番です。わが家のように両方使うという選択肢もあります。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="section-label" style="margin-top:2.5rem;">関連記事</div>
+      <a href="8cost.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムと生活クラブの月額費用【実際いくらかかる？双子パパの家計公開】</div>
+      </a>
+      <a href="3both.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムと生活クラブを両方使う理由【双子パパの場合】</div>
+      </a>
+      <a href="6join-palsystem.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">パルシステムの始め方・入会方法</div>
+      </a>
+      <a href="7join-seikatsuclub.html" class="related-card">
+        <div class="r-tag">管理者のひとりごと</div>
+        <div class="r-title">生活クラブの始め方・入会方法</div>
+      </a>
+
+    </div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">プロフィール</div>
+      <div class="profile-head">
+        <img src="profile-photo.avif" alt="管理人" style="width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+        <div>
+          <div class="profile-name">管理人</div>
+          <div class="profile-role">30代・双子パパ・会社員</div>
+        </div>
+      </div>
+      <p class="profile-bio">パルシステムと生活クラブを両方使いながら、本当に使える食材を探してレポートしています。</p>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">カテゴリ</div>
+      <ul class="cat-list">
+        <li><a href="category.html">食べ物レビュー <span class="cat-count">3</span></a></li>
+        <li><a href="category.html">管理者のひとりごと <span class="cat-count">6</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <div class="section-label" style="font-size:11px; margin-bottom:1rem;">タグ</div>
+      <div class="tag-cloud">
+        <a href="#">ランキング</a><a href="#">オリコン</a><a href="#">パルシステム</a>
+        <a href="#">生活クラブ</a><a href="#">比較</a><a href="#">子育て</a><a href="#">首都圏</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">生協の<span>ある</span>くらし</div>
+    <div class="footer-copy">© 2026 生協のあるくらし</div>
+  </div>
+</footer>
+</body>
+</html>
